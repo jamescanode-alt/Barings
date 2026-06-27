@@ -14,7 +14,11 @@ and added an automated GitHub Pages deployment.
   (configure-pages with `enablement: true`, upload-pages-artifact, deploy-pages)
 
 **Validation:** woff2 signatures verified; visual QA in Launch preview.
-**Status:** Complete — site is fully self-contained and auto-deploys.
+**Status:** Fonts complete. Pages deploy blocked — see note below.
+
+**Pages note:** GitHub Pages is not available for private repos on this account's plan.
+Workflow set to manual-only (`workflow_dispatch`) so it no longer fails on each push.
+To deploy: make the repo public (or upgrade), then re-enable the `push` trigger.
 
 ---
 

@@ -11,3 +11,7 @@
 - [ ] Accessibility audit (contrast ratios, keyboard nav, screen reader)
 - [ ] Add Open Graph meta tags for social sharing previews
 - [ ] Legal/compliance review of all benefit claims before publishing
+- [ ] Deployment: GitHub Pages needs a public repo on the current plan. To go live,
+      make the repo public (or upgrade), then re-add the `push` trigger in
+      `.github/workflows/deploy.yml` (currently manual-only). Alternative: host on
+      Netlify/Vercel/Railway while keeping the repo private.
