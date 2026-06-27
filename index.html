@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Private Wealth Strategy for Barings Professionals | Farther Focus Team</title>
+  <meta name="description" content="You manage institutional capital. The Farther Focus Team manages yours — advanced tax deferral, estate strategy, and wealth protection built for Barings professionals." />
+  <meta property="og:title" content="Private Wealth Strategy for Barings Professionals" />
+  <meta property="og:description" content="You spend your career growing institutional wealth. We protect your own — with the tax, estate, and deferral strategy you'd expect." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:#F8F4F0; --cream-2:#F2EAE2; --ink:#1d2b36; --ink-soft:#24333f;
+      --steel:#557A89; --steel-lt:#6f8f99; --steel-dk:#45697a;
+      --blue:#4d65ff; --blue-soft:#7d90ff; --teal:#3cc1d3; --teal-br:#5fd0e0;
+      --aqua:#A0E1EA; --pale-blue:#b6d0ed; --clay:#885546;
+      --text:#333333; --text-soft:#51616e; --white:#ffffff;
+      --radius:12px; --radius-sm:8px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text); background: var(--cream); line-height: 1.65;
+      overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+    }
+    h1, h2, h3, h4, .display { font-family: 'Hanken Grotesk', 'Inter', sans-serif; }
+
+    .accent-dark { background: linear-gradient(100deg, var(--teal-br), var(--blue-soft)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+    .accent-light{ background: linear-gradient(100deg, var(--steel), var(--blue));        -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+
+    /* ── CUSTOM CURSOR (hover devices, set by JS) ── */
+    .cursor-dot, .cursor-ring { position: fixed; top: 0; left: 0; border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%, -50%); opacity: 0; }
+    body.has-cursor .cursor-dot, body.has-cursor .cursor-ring { opacity: 1; }
+    .cursor-dot { width: 6px; height: 6px; background: var(--blue); transition: opacity .3s; }
+    .cursor-ring { width: 38px; height: 38px; border: 1.5px solid rgba(85,122,137,0.5);
+      transition: width .25s ease, height .25s ease, background .25s ease, border-color .25s ease, opacity .3s; }
+    .cursor-ring.on-dark { border-color: rgba(95,208,224,0.6); }
+    .cursor-ring.hovering { width: 64px; height: 64px; background: rgba(77,101,255,0.10); border-color: rgba(77,101,255,0.45); }
+    body.has-cursor, body.has-cursor a, body.has-cursor button, body.has-cursor .faq-q, body.has-cursor .cover-row, body.has-cursor [data-magnetic] { cursor: none; }
+
+    /* ── KICKER + ACCENT BAR ── */
+    .kicker { font-size: 12px; font-weight: 600; letter-spacing: 2.4px; text-transform: uppercase; color: var(--steel); }
+    .kicker.on-dark { color: var(--teal-br); }
+    .bar { display: block; width: 46px; height: 3px; border-radius: 2px; background: linear-gradient(90deg, var(--teal), var(--blue)); margin: 14px 0 22px; transform: scaleX(0); transform-origin: left; transition: transform .9s cubic-bezier(.16,1,.3,1) .15s; }
+    .bar.center { margin-left: auto; margin-right: auto; transform-origin: center; }
+    .reveal.in .bar, .myths-head.in .bar { transform: scaleX(1); }
+
+    /* ── NAV (theme-aware) ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 clamp(20px, 5vw, 56px); height: 74px;
+      transition: background 0.45s, box-shadow 0.45s, border-color 0.45s;
+      border-bottom: 1px solid transparent;
+    }
+    nav.scrolled.nav--light { background: rgba(248,244,240,0.88); backdrop-filter: blur(18px) saturate(130%); -webkit-backdrop-filter: blur(18px) saturate(130%); border-bottom: 1px solid rgba(85,122,137,0.18); }
+    nav.scrolled.nav--dark  { background: rgba(29,43,54,0.72);  backdrop-filter: blur(18px) saturate(130%); -webkit-backdrop-filter: blur(18px) saturate(130%); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo-mark { width: 38px; height: 38px; border-radius: 9px; display: flex; align-items: center; justify-content: center; font-family: 'Hanken Grotesk', serif; font-weight: 800; font-size: 20px; color: var(--white); background: var(--blue); box-shadow: 0 4px 16px rgba(77,101,255,0.32); }
+    .logo-text { font-size: 20px; font-weight: 700; letter-spacing: 0.2px; transition: color 0.4s; color: var(--white); }
+    .logo-text small { display: block; font-size: 10px; font-weight: 600; letter-spacing: 2.4px; text-transform: uppercase; margin-top: -2px; transition: color 0.4s; color: var(--teal-br); }
+    nav.nav--light .logo-text { color: var(--ink); }
+    nav.nav--light .logo-text small { color: var(--steel); }
+    .nav-cta { color: var(--white); font-weight: 600; font-size: 14px; padding: 11px 24px; border-radius: var(--radius-sm); text-decoration: none; background: var(--blue); transition: transform 0.18s, box-shadow 0.25s, background 0.2s; box-shadow: 0 4px 14px rgba(77,101,255,0.30); white-space: nowrap; }
+    .nav-cta:hover { background: #3d54e8; box-shadow: 0 8px 22px rgba(77,101,255,0.42); }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative; min-height: 100vh; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; text-align: center;
+      padding: 120px clamp(20px, 5vw, 40px) 110px; overflow: hidden;
+      background: linear-gradient(165deg, var(--ink) 0%, #16242f 55%, var(--ink) 100%);
+    }
+    #particles { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.5; z-index: 0; pointer-events: none; }
+    .orb-1 { width: 520px; height: 520px; top: -160px; left: -100px; background: radial-gradient(circle, rgba(85,122,137,0.55), transparent 70%); animation: drift1 20s ease-in-out infinite; }
+    .orb-2 { width: 580px; height: 580px; bottom: -160px; right: -140px; background: radial-gradient(circle, rgba(60,193,211,0.22), transparent 70%); animation: drift2 25s ease-in-out infinite; }
+    .orb-3 { width: 360px; height: 360px; top: 36%; left: 58%; background: radial-gradient(circle, rgba(77,101,255,0.20), transparent 70%); animation: drift3 28s ease-in-out infinite; }
+    @keyframes drift1 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(50px,36px)} }
+    @keyframes drift2 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-60px,-42px)} }
+    @keyframes drift3 { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(-34px,26px) scale(1.08)} }
+    .hero::before {
+      content:''; position:absolute; inset:0; z-index:0; pointer-events:none;
+      background-image: linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
+      background-size: 68px 68px;
+      mask-image: radial-gradient(ellipse 78% 66% at 50% 42%, #000 25%, transparent 75%);
+      -webkit-mask-image: radial-gradient(ellipse 78% 66% at 50% 42%, #000 25%, transparent 75%);
+    }
+    .hero-inner { position: relative; z-index: 2; max-width: 960px; }
+
+    .hero-badge { display: inline-flex; align-items: center; gap: 9px; font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--teal-br); padding: 8px 18px; border-radius: 100px; background: rgba(60,193,211,0.08); border: 1px solid rgba(60,193,211,0.28); margin-bottom: 32px; backdrop-filter: blur(6px); }
+    .hero-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal-br); box-shadow: 0 0 10px var(--teal-br); animation: pulse 2.4s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.25} }
+
+    .hero-h1 { color: var(--white); font-size: clamp(40px, 7vw, 86px); font-weight: 700; line-height: 1.04; letter-spacing: -1.4px; margin-bottom: 26px; }
+    .hero-h1 .ln { display: block; overflow: hidden; padding-bottom: 0.06em; }
+    .hero-h1 .ln-i { display: inline-block; font-style: normal; transform: translateY(116%); transition: transform 1.1s cubic-bezier(.16,1,.3,1); }
+    .hero.ready .hero-h1 .ln-i { transform: none; }
+    .hero.ready .hero-h1 .ln:nth-child(2) .ln-i { transition-delay: .12s; }
+
+    .hero-fade { opacity: 0; transform: translateY(22px); transition: opacity .9s ease, transform .9s cubic-bezier(.16,1,.3,1); }
+    .hero.ready .hero-fade { opacity: 1; transform: none; }
+    .hero.ready .hf1 { transition-delay: .30s; } .hero.ready .hf2 { transition-delay: .42s; }
+    .hero.ready .hf3 { transition-delay: .54s; } .hero.ready .hf4 { transition-delay: .66s; }
+
+    .hero-sub { font-size: clamp(16px, 2vw, 19px); color: rgba(255,255,255,0.70); max-width: 650px; margin: 0 auto 42px; line-height: 1.75; font-weight: 300; }
+    .hero-sub strong { color: rgba(255,255,255,0.94); font-weight: 500; }
+    .hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    .btn-primary { position: relative; overflow: hidden; color: var(--white); font-weight: 600; font-size: 15px; padding: 15px 36px; border-radius: var(--radius-sm); text-decoration: none; background: var(--blue); box-shadow: 0 6px 22px rgba(77,101,255,0.32); transition: transform 0.18s, box-shadow 0.25s, background 0.2s; }
+    .btn-primary::after { content:''; position:absolute; top:0; left:-130%; width:55%; height:100%; background: linear-gradient(100deg, transparent, rgba(255,255,255,0.35), transparent); transform: skewX(-20deg); transition: left 0.55s; }
+    .btn-primary:hover { background:#3d54e8; box-shadow: 0 12px 32px rgba(77,101,255,0.44); }
+    .btn-primary:hover::after { left: 130%; }
+    .btn-ghost { color: var(--white); font-weight: 500; font-size: 15px; padding: 15px 32px; border-radius: var(--radius-sm); text-decoration: none; border: 1px solid rgba(255,255,255,0.24); background: rgba(255,255,255,0.03); backdrop-filter: blur(6px); transition: border-color 0.25s, background 0.25s; }
+    .btn-ghost:hover { border-color: rgba(60,193,211,0.6); background: rgba(60,193,211,0.07); }
+
+    .hero-stats { display: flex; justify-content: center; gap: clamp(28px, 6vw, 80px); margin-top: 78px; flex-wrap: wrap; position: relative; z-index: 2; }
+    .stat { text-align: center; }
+    .stat-value { font-family: 'Hanken Grotesk', sans-serif; font-size: clamp(34px, 5vw, 50px); font-weight: 700; display: block; line-height: 1; letter-spacing: -1px; }
+    .stat-label { font-size: 12.5px; color: rgba(255,255,255,0.5); margin-top: 10px; letter-spacing: 0.3px; }
+
+    .scroll-hint { position: absolute; bottom: 92px; left: 50%; transform: translateX(-50%); z-index: 2; color: rgba(255,255,255,0.4); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+    .scroll-hint .line { width: 1px; height: 36px; background: linear-gradient(var(--teal-br), transparent); animation: scrollLine 2.1s infinite; }
+    @keyframes scrollLine { 0%{opacity:0;transform:scaleY(0);transform-origin:top} 50%{opacity:1;transform:scaleY(1)} 100%{opacity:0;transform:scaleY(1);transform-origin:bottom} }
+
+    /* ── WAVES ── */
+    .wave { position: absolute; left: 0; right: 0; bottom: -1px; width: 100%; height: 64px; line-height: 0; z-index: 3; pointer-events: none; }
+    .wave svg { width: 100%; height: 100%; display: block; }
+
+    /* ── MARQUEE BAND ── */
+    .marquee { background: var(--ink); padding: 22px 0; overflow: hidden; position: relative; }
+    .marquee::before, .marquee::after { content:''; position:absolute; top:0; bottom:0; width: 12%; z-index:2; pointer-events:none; }
+    .marquee::before { left:0; background: linear-gradient(90deg, var(--ink), transparent); }
+    .marquee::after  { right:0; background: linear-gradient(270deg, var(--ink), transparent); }
+    .marquee-track { display: inline-flex; align-items: center; white-space: nowrap; will-change: transform; animation: marquee 32s linear infinite; }
+    .marquee:hover .marquee-track { animation-play-state: paused; }
+    .marquee-item { font-family: 'Hanken Grotesk', sans-serif; font-size: clamp(20px, 3vw, 34px); font-weight: 700; letter-spacing: -0.4px; color: rgba(255,255,255,0.92); padding: 0 12px; }
+    .marquee-sep { color: var(--teal-br); padding: 0 4px; font-size: 18px; transform: translateY(-2px); }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* ── SECTION SHELL ── */
+    section { position: relative; padding: clamp(78px, 10vw, 124px) clamp(20px, 5vw, 40px); z-index: 2; }
+    .container { max-width: 1160px; margin: 0 auto; position: relative; z-index: 2; }
+    .h2 { font-size: clamp(28px, 4vw, 48px); font-weight: 700; line-height: 1.12; letter-spacing: -0.8px; margin-bottom: 18px; }
+
+    /* watermark words (parallax) */
+    .watermark { position: absolute; font-family: 'Hanken Grotesk', sans-serif; font-weight: 800; font-size: clamp(110px, 20vw, 320px); line-height: 0.8; white-space: nowrap; pointer-events: none; z-index: 1; letter-spacing: -4px; }
+    .watermark.light { color: rgba(29,43,54,0.035); }
+    .watermark.dark  { color: rgba(255,255,255,0.045); }
+
+    /* reveals */
+    .reveal { opacity:0; transform:translateY(38px); transition: opacity 0.8s cubic-bezier(.16,1,.3,1), transform 0.8s cubic-bezier(.16,1,.3,1); }
+    .reveal.in { opacity:1; transform:none; }
+    .reveal.d1 { transition-delay:.08s } .reveal.d2 { transition-delay:.16s } .reveal.d3 { transition-delay:.24s } .reveal.d4 { transition-delay:.32s }
+
+    /* ── TRUST STRIP ── */
+    .trust { background: var(--cream); padding: 30px clamp(20px,5vw,40px); }
+    .trust-row { max-width: 1160px; margin: 0 auto; display: flex; justify-content: center; align-items: center; gap: clamp(22px, 5vw, 56px); flex-wrap: wrap; }
+    .trust-item { display:flex; align-items:center; gap: 9px; font-size: 13px; font-weight: 500; color: var(--text-soft); }
+    .trust-item svg { width:17px; height:17px; stroke: var(--steel); fill:none; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; }
+
+    /* ── MYTHS ── */
+    .myths-section { background: var(--cream); }
+    .myths-head { text-align:center; max-width:660px; margin: 0 auto 56px; opacity:0; transform:translateY(38px); transition: opacity 0.8s cubic-bezier(.16,1,.3,1), transform 0.8s cubic-bezier(.16,1,.3,1); }
+    .myths-head.in { opacity:1; transform:none; }
+    .myths-head .h2 { color: var(--ink); }
+    .myths-head p { font-size:17px; color: var(--text-soft); max-width:580px; margin: 0 auto; line-height:1.72; font-weight:300; }
+    .myth-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(290px, 1fr)); gap:22px; }
+    .myth-card { position:relative; padding:38px 32px; border-radius:var(--radius); background: var(--white); border: 1px solid rgba(85,122,137,0.16); box-shadow: 0 2px 14px rgba(29,43,54,0.06); overflow:hidden; transition: transform 0.32s, box-shadow 0.32s, border-color 0.32s; }
+    .myth-card:hover { transform:translateY(-6px); box-shadow:0 16px 38px rgba(29,43,54,0.13); border-color: rgba(85,122,137,0.34); }
+    .myth-num { font-family:'Hanken Grotesk', sans-serif; font-size:42px; font-weight:800; line-height:1; margin-bottom:16px; letter-spacing:-1px; }
+    .myth-card h3 { font-size:17.5px; font-weight:700; margin-bottom:16px; line-height:1.4; color: var(--ink); }
+    .myth-card .quote-mark { color: var(--teal); }
+    .myth-divider { height:1px; background: rgba(85,122,137,0.18); margin:16px 0; }
+    .reality { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color: var(--steel); margin-bottom:10px; }
+    .myth-card p { font-size:14.5px; color: var(--text-soft); line-height:1.72; }
+
+    /* ── CAPABILITIES ── */
+    .cap-section { background: linear-gradient(165deg, var(--steel) 0%, var(--steel-dk) 100%); overflow: hidden; }
+    .cap-head { text-align:center; max-width:660px; margin: 0 auto 60px; }
+    .cap-head .h2 { color: var(--white); }
+    .cap-head .kicker { color: #d6eef2; }
+    .cap-head p { font-size:17px; color:rgba(255,255,255,0.82); max-width:580px; margin:0 auto; line-height:1.72; font-weight:300; }
+    .cap-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(290px, 1fr)); gap:20px; }
+    .cap-card { position:relative; padding:34px 28px; border-radius:var(--radius); background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.16); transition: transform 0.32s, background 0.32s, border-color 0.32s; }
+    .cap-card:hover { transform:translateY(-6px); background:rgba(255,255,255,0.15); border-color:rgba(255,255,255,0.34); }
+    .cap-icon { width:52px; height:52px; border-radius:12px; margin-bottom:20px; display:flex; align-items:center; justify-content:center; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.22); }
+    .cap-icon svg { width:25px; height:25px; stroke: var(--white); fill:none; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; }
+    .cap-card h3 { font-size:17.5px; font-weight:700; margin-bottom:10px; color:var(--white); }
+    .cap-card p  { font-size:14px; color:rgba(255,255,255,0.80); line-height:1.7; }
+
+    /* ── COVERAGE SPLIT ── */
+    .split-section { background: var(--cream); overflow: hidden; }
+    .split { display:grid; grid-template-columns:1.05fr 0.95fr; gap:clamp(40px, 6vw, 80px); align-items:center; }
+    @media (max-width:860px) { .split { grid-template-columns:1fr; } }
+    .split-copy .h2 { color: var(--ink); }
+    .split-copy p { font-size:16px; color: var(--text-soft); line-height:1.8; font-weight:300; margin-bottom:14px; }
+    .split-copy p strong { color: var(--ink); font-weight:600; }
+    .cover-list { list-style:none; display:flex; flex-direction:column; gap:8px; margin-top:10px; }
+    .cover-row { display:flex; align-items:center; gap:14px; padding:15px 19px; border-radius:var(--radius-sm); background:var(--white); border: 1px solid rgba(85,122,137,0.16); box-shadow: 0 1px 5px rgba(29,43,54,0.04); transition: background 0.26s, transform 0.26s, border-color 0.26s, box-shadow 0.26s; }
+    .cover-row:hover { background:var(--cream-2); border-color: rgba(85,122,137,0.34); transform:translateX(6px); box-shadow: 0 4px 12px rgba(29,43,54,0.08); }
+    .cover-check { width:28px; height:28px; border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center; background: linear-gradient(135deg, var(--teal), var(--blue)); }
+    .cover-check svg { width:14px; height:14px; stroke:var(--white); fill:none; stroke-width:2.6; stroke-linecap:round; stroke-linejoin:round; }
+    .cover-row span { font-size:15px; color:var(--text); font-weight:400; }
+
+    /* ── FAQ ── */
+    .faq-section { background: var(--ink); overflow: hidden; }
+    .faq-head { text-align:center; margin-bottom:48px; }
+    .faq-head .h2 { color: var(--white); }
+    .faq-head p { font-size:17px; color:rgba(255,255,255,0.62); max-width:540px; margin:0 auto; line-height:1.7; font-weight:300; }
+    .faq-list { max-width:800px; margin:0 auto; display:flex; flex-direction:column; gap:12px; }
+    .faq-item { border-radius:var(--radius); overflow:hidden; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09); transition: border-color 0.26s, background 0.26s; }
+    .faq-item.open { border-color:rgba(60,193,211,0.4); background:rgba(60,193,211,0.06); }
+    .faq-q { width:100%; background:none; border:none; text-align:left; padding:22px 26px; font-family:'Hanken Grotesk',sans-serif; font-size:16px; font-weight:600; color:var(--white); display:flex; justify-content:space-between; align-items:center; gap:18px; }
+    .faq-ico { flex-shrink:0; width:20px; height:20px; position:relative; }
+    .faq-ico::before, .faq-ico::after { content:''; position:absolute; background:var(--teal-br); transition: transform 0.26s, opacity 0.26s; }
+    .faq-ico::before { top:9px; left:1px; width:18px; height:1.5px; }
+    .faq-ico::after  { left:9px; top:1px; width:1.5px; height:18px; }
+    .faq-item.open .faq-ico::after { transform:rotate(90deg); opacity:0; }
+    .faq-a { max-height:0; overflow:hidden; transition:max-height 0.4s ease; }
+    .faq-a-inner { padding:0 26px 24px; font-size:15px; color:rgba(255,255,255,0.66); line-height:1.78; font-weight:300; }
+
+    /* ── TEAM ── */
+    .team-section { background: var(--cream); overflow: hidden; }
+    .team-head { text-align:center; max-width:640px; margin: 0 auto 52px; }
+    .team-head .h2 { color: var(--ink); }
+    .team-head p { font-size:17px; color:var(--text-soft); max-width:540px; margin:0 auto; line-height:1.7; font-weight:300; }
+    .cred-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(210px, 1fr)); gap:20px; max-width:960px; margin:0 auto; }
+    .cred-card { text-align:center; padding:34px 22px; border-radius:var(--radius); background: var(--white); border: 1px solid rgba(85,122,137,0.16); box-shadow: 0 2px 12px rgba(29,43,54,0.05); transition: transform 0.32s, box-shadow 0.32s, border-color 0.32s; }
+    .cred-card:hover { transform:translateY(-6px); box-shadow:0 14px 32px rgba(29,43,54,0.11); border-color:rgba(85,122,137,0.34); }
+    .cred-badge { width:72px; height:72px; border-radius:50%; margin: 0 auto 16px; display:flex; align-items:center; justify-content:center; font-family:'Hanken Grotesk', sans-serif; font-size:21px; font-weight:800; color:var(--steel); background: linear-gradient(145deg, rgba(85,122,137,0.12), rgba(60,193,211,0.08)); border: 1.5px solid rgba(85,122,137,0.26); }
+    .cred-card h4 { font-size:15px; font-weight:700; margin-bottom:6px; color:var(--ink); }
+    .cred-card .role { font-size:11.5px; font-weight:600; letter-spacing:0.5px; color:var(--steel); margin-bottom:12px; }
+    .cred-card p { font-size:13px; color:var(--text-soft); line-height:1.6; }
+    .team-foot { text-align:center; margin-top:46px; font-size:15px; color:var(--text-soft); }
+    .team-foot strong { color:var(--steel); font-weight:700; }
+
+    /* ── CTA ── */
+    .cta { position:relative; text-align:center; overflow:hidden; padding: clamp(90px, 12vw, 144px) clamp(20px, 5vw, 40px); background: linear-gradient(160deg, var(--steel) 0%, var(--steel-dk) 100%); }
+    .cta .orb-c1 { position:absolute; width:600px; height:600px; top:-220px; left:50%; transform:translateX(-50%); background: radial-gradient(circle, rgba(60,193,211,0.22), transparent 65%); filter: blur(60px); z-index:0; }
+    .cta-inner { position:relative; z-index:2; max-width:660px; margin:0 auto; }
+    .cta .kicker { color: #d6eef2; }
+    .cta h2 { font-family:'Hanken Grotesk',sans-serif; font-size:clamp(30px, 4.6vw, 54px); font-weight:700; line-height:1.12; letter-spacing:-0.8px; margin-bottom:18px; color: var(--white); }
+    .cta p { font-size:17px; color:rgba(255,255,255,0.85); margin-bottom:36px; line-height:1.75; font-weight:300; }
+    .cta .btn-primary { background: var(--white); color: var(--ink); box-shadow: 0 8px 26px rgba(0,0,0,0.18); }
+    .cta .btn-primary:hover { background: var(--cream); }
+    .cta-note { margin-top:20px; font-size:13px; color:rgba(255,255,255,0.62); }
+
+    /* ── FOOTER ── */
+    footer { background: var(--ink); padding: 52px clamp(20px,5vw,40px) 36px; }
+    .foot-inner { max-width:1160px; margin:0 auto; text-align:center; }
+    .foot-logo { display:flex; align-items:center; justify-content:center; gap:11px; margin-bottom:22px; }
+    .foot-logo .logo-text { color: var(--white); }
+    footer p { font-size:12.5px; color:rgba(255,255,255,0.42); line-height:1.82; max-width:760px; margin:0 auto; }
+    footer a { color:rgba(255,255,255,0.56); text-decoration:none; transition:color 0.2s; }
+    footer a:hover { color:var(--teal-br); }
+    .foot-links { margin:16px 0; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .reveal, .myths-head { opacity:1 !important; transform:none !important; }
+      .hero-h1 .ln-i, .hero-fade { transform:none !important; opacity:1 !important; }
+      .bar { transform: scaleX(1) !important; }
+      .marquee-track { animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="cursor-ring"></div>
+<div class="cursor-dot"></div>
+
+<!-- NAV -->
+<nav id="nav" class="nav--dark">
+  <a href="#" class="nav-logo" data-cursor>
+    <div class="logo-mark">F</div>
+    <div class="logo-text">Farther<small>Focus Team</small></div>
+  </a>
+  <a href="#contact" class="nav-cta" data-magnetic>Request a Consultation</a>
+</nav>
+
+<!-- HERO -->
+<header class="hero" data-theme="dark">
+  <canvas id="particles"></canvas>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <div class="hero-inner">
+    <div class="hero-badge hero-fade hf1"><span class="dot"></span> For Barings Professionals</div>
+    <h1 class="hero-h1">
+      <span class="ln"><span class="ln-i">You manage <span class="accent-dark">institutional capital.</span></span></span>
+      <span class="ln"><span class="ln-i">Who is managing <span class="accent-dark">yours?</span></span></span>
+    </h1>
+    <p class="hero-sub hero-fade hf2">
+      You spend your career compounding wealth for the world's largest institutions.
+      The Farther <strong>Focus Team</strong> brings that same rigor to your own balance sheet —
+      <strong>advanced tax deferral, estate architecture, and wealth protection</strong>
+      engineered for sophisticated investors who expect more.
+    </p>
+    <div class="hero-actions hero-fade hf3">
+      <a href="#contact" class="btn-primary" data-magnetic>Request a Private Consultation</a>
+      <a href="#capabilities" class="btn-ghost" data-magnetic>Explore Our Capabilities</a>
+    </div>
+  </div>
+
+  <div class="hero-stats hero-fade hf4">
+    <div class="stat"><span class="stat-value accent-dark" data-count="481" data-prefix="$" data-suffix="B">$0B</span><span class="stat-label">The capital you steward daily</span></div>
+    <div class="stat"><span class="stat-value accent-dark" data-count="24" data-suffix="+">0</span><span class="stat-label">Dedicated Focus Team advisors</span></div>
+    <div class="stat"><span class="stat-value accent-dark" data-count="100" data-suffix="%">0%</span><span class="stat-label">Fiduciary. Fee-only. Always.</span></div>
+  </div>
+
+  <div class="scroll-hint hero-fade hf4"><span>Scroll</span><span class="line"></span></div>
+
+  <div class="wave"><svg viewBox="0 0 1440 64" preserveAspectRatio="none"><path d="M0,30 C240,66 480,4 720,26 C960,48 1200,70 1440,34 L1440,64 L0,64 Z" fill="#F8F4F0"/></svg></div>
+</header>
+
+<!-- TRUST STRIP -->
+<div class="trust" data-theme="light">
+  <div class="trust-row">
+    <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M12 3l7 4v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V7z"/></svg> Fiduciary Standard</div>
+    <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg> SEC-Registered RIA</div>
+    <div class="trust-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg> Backed by Alphabet's CapitalG</div>
+    <div class="trust-item"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg> Bank-Grade Security</div>
+    <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M21 7v5M21 7h-5"/></svg> $150M Series D · General Atlantic</div>
+  </div>
+</div>
+
+<!-- MARQUEE -->
+<div class="marquee" data-theme="dark" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="marquee-item">Tax Deferral</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">Estate Architecture</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">Carried-Interest Planning</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">Tax-Alpha Investing</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">Asset Protection</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">Generational Transfer</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">Liquidity Strategy</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">Tax Deferral</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">Estate Architecture</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">Carried-Interest Planning</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">Tax-Alpha Investing</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">Asset Protection</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">Generational Transfer</span><span class="marquee-sep">◆</span>
+    <span class="marquee-item">Liquidity Strategy</span><span class="marquee-sep">◆</span>
+  </div>
+</div>
+
+<!-- MYTHS -->
+<section class="myths-section" data-theme="light">
+  <div class="watermark light" data-par="0.10" style="top:6%; left:-2%;">EXPERTISE</div>
+  <div class="container">
+    <div class="myths-head">
+      <div class="kicker">The Blind Spot</div>
+      <span class="bar center"></span>
+      <h2 class="h2">The Most Underserved Client Is <span class="accent-light">Often the Expert</span></h2>
+      <p>The same professionals who optimize billions in institutional portfolios routinely leave six and seven figures on the table in their own financial lives. Three reasons why.</p>
+    </div>
+    <div class="myth-grid">
+      <div class="myth-card reveal d1" data-cursor>
+        <div class="myth-num accent-light">01</div>
+        <h3><span class="quote-mark">"</span>My market expertise means I don't need an advisor.<span class="quote-mark">"</span></h3>
+        <div class="myth-divider"></div>
+        <div class="reality">The Reality</div>
+        <p>Managing institutional mandates is a different discipline from architecting personal wealth. Income deferral elections, asset location, multi-generational transfer, and concentrated-position risk demand a dedicated strategist — and the objectivity that none of us have about our own money.</p>
+      </div>
+      <div class="myth-card reveal d2" data-cursor>
+        <div class="myth-num accent-light">02</div>
+        <h3><span class="quote-mark">"</span>Estate and gifting strategy can wait.<span class="quote-mark">"</span></h3>
+        <div class="myth-divider"></div>
+        <div class="reality">The Reality</div>
+        <p>The most powerful transfer techniques — trusts, strategic gifting, and discounted valuations — depend on time and advance structuring. Waiting forfeits exemptions and compounding that cannot be recovered later. The cost of delay is measured in generations, not years.</p>
+      </div>
+      <div class="myth-card reveal d3" data-cursor>
+        <div class="myth-num accent-light">03</div>
+        <h3><span class="quote-mark">"</span>I'll deal with the tax hit when it comes.<span class="quote-mark">"</span></h3>
+        <div class="myth-divider"></div>
+        <div class="reality">The Reality</div>
+        <p>Deferred compensation, carried interest, equity, and fund co-investments concentrate income into your highest-bracket years. Without multi-year sequencing — Roth conversions, charitable vehicles, deferral timing — you surrender to the tax code instead of planning around it.</p>
+      </div>
+    </div>
+  </div>
+  <div class="wave"><svg viewBox="0 0 1440 64" preserveAspectRatio="none"><path d="M0,30 C240,66 480,4 720,26 C960,48 1200,70 1440,34 L1440,64 L0,64 Z" fill="#557A89"/></svg></div>
+</section>
+
+<!-- CAPABILITIES -->
+<section id="capabilities" class="cap-section" data-theme="dark">
+  <div class="watermark dark" data-par="0.12" style="top:4%; right:-3%;">STRATEGY</div>
+  <div class="container">
+    <div class="cap-head reveal">
+      <div class="kicker on-dark">Our Capabilities</div>
+      <span class="bar center"></span>
+      <h2 class="h2">Wealth Strategy, Engineered to Your Complexity</h2>
+      <p>A coordinated team built for the realities of high-income finance professionals — where tax, estate, investment, and benefits decisions are deeply intertwined.</p>
+    </div>
+    <div class="cap-grid">
+      <div class="cap-card reveal d1" data-cursor>
+        <div class="cap-icon"><svg viewBox="0 0 24 24"><path d="M12 2v20M5 6l7-4 7 4M5 6v8c0 3 3 5 7 6 4-1 7-3 7-6V6"/></svg></div>
+        <h3>Advanced Tax Deferral</h3>
+        <p>Deferred-compensation election strategy, distribution scheduling, and 409A coordination to move income out of peak-bracket years and into a deliberate plan.</p>
+      </div>
+      <div class="cap-card reveal d2" data-cursor>
+        <div class="cap-icon"><svg viewBox="0 0 24 24"><path d="M3 21h18M6 21V11M10 21V7M14 21V9M18 21V5M3 11l5-5 4 3 6-6"/></svg></div>
+        <h3>Estate &amp; Legacy Architecture</h3>
+        <p>Trust structures, strategic gifting, and generational transfer designed to protect and pass on wealth tax-efficiently — coordinated with your attorney and CPA.</p>
+      </div>
+      <div class="cap-card reveal d3" data-cursor>
+        <div class="cap-icon"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zM12 6v6l4 2"/></svg></div>
+        <h3>Concentrated Position &amp; Carry Planning</h3>
+        <p>Diversification, hedging, and tax-aware unwinding for equity comp, carried interest, and co-investments — managing risk without surrendering upside.</p>
+      </div>
+      <div class="cap-card reveal d1" data-cursor>
+        <div class="cap-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4zM4 9h16M9 9v11M14 14l2 2 3-3"/></svg></div>
+        <h3>Tax-Alpha Investing</h3>
+        <p>Direct indexing, systematic tax-loss harvesting, and asset location across taxable, tax-deferred, and Roth accounts to keep more of every dollar earned.</p>
+      </div>
+      <div class="cap-card reveal d2" data-cursor>
+        <div class="cap-icon"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9.5C7.5 20 4 17 4 12V7z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Asset Protection</h3>
+        <p>Liability-aware structuring, entity and insurance review, and protective vehicles that shield personal wealth from professional and personal exposure.</p>
+      </div>
+      <div class="cap-card reveal d3" data-cursor>
+        <div class="cap-icon"><svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3>Private Markets &amp; Liquidity</h3>
+        <p>Access to alternatives befitting a sophisticated investor, plus liquidity planning around capital calls, lock-ups, and the cadence of fund-based compensation.</p>
+      </div>
+    </div>
+  </div>
+  <div class="wave"><svg viewBox="0 0 1440 64" preserveAspectRatio="none"><path d="M0,34 C240,70 480,6 720,30 C960,54 1200,72 1440,32 L1440,64 L0,64 Z" fill="#F8F4F0"/></svg></div>
+</section>
+
+<!-- COVERAGE SPLIT -->
+<section class="split-section" data-theme="light">
+  <div class="container split">
+    <div class="split-copy reveal">
+      <div class="kicker">A Single Coordinated Plan</div>
+      <span class="bar"></span>
+      <h2 class="h2">Every Decision, In One Strategy</h2>
+      <p>Your benefits desk can tell you what you have. We tell you precisely when and how to use it — and how each lever interacts with the next. One advisor, one integrated plan, every part of your financial life accounted for.</p>
+      <p><strong>No silos. No hand-offs. No piece left to chance.</strong></p>
+    </div>
+    <div class="reveal d2">
+      <ul class="cover-list">
+        <li class="cover-row" data-cursor><span class="cover-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span><span>Deferred Compensation &amp; 409A Election Strategy</span></li>
+        <li class="cover-row" data-cursor><span class="cover-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span><span>Equity, Carry &amp; Co-Investment Planning</span></li>
+        <li class="cover-row" data-cursor><span class="cover-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span><span>Multi-Year Tax &amp; Roth Conversion Sequencing</span></li>
+        <li class="cover-row" data-cursor><span class="cover-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span><span>Trust, Gifting &amp; Generational Transfer</span></li>
+        <li class="cover-row" data-cursor><span class="cover-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span><span>Charitable &amp; Philanthropic Vehicles</span></li>
+        <li class="cover-row" data-cursor><span class="cover-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span><span>401(k), Retirement &amp; Benefits Optimization</span></li>
+        <li class="cover-row" data-cursor><span class="cover-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span><span>Asset Protection &amp; Insurance Review</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wave"><svg viewBox="0 0 1440 64" preserveAspectRatio="none"><path d="M0,30 C240,66 480,4 720,26 C960,48 1200,70 1440,34 L1440,64 L0,64 Z" fill="#1d2b36"/></svg></div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" data-theme="dark">
+  <div class="watermark dark" data-par="0.12" style="bottom:6%; left:-2%;">CLARITY</div>
+  <div class="container">
+    <div class="faq-head reveal">
+      <div class="kicker on-dark">Questions, Answered</div>
+      <span class="bar center"></span>
+      <h2 class="h2">What Barings Professionals Ask Us</h2>
+      <p>Direct answers to the strategic questions a benefits portal can't address.</p>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" data-cursor>When should I structure my deferred compensation elections? <span class="faq-ico"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Deferral elections under Section 409A generally must be made before the compensation is earned, and distribution schedules often must be locked years in advance. The optimal structure depends on your projected income, bracket trajectory, liquidity needs, and other retirement assets. Decisions made now compound — or cost — for a decade.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" data-cursor>I hold carried interest and fund co-investments. How do you plan around them? <span class="faq-ico"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">We map the tax character and timing of each position, model concentration risk against your total net worth, and build a tax-aware diversification and liquidity plan around capital calls and lock-ups — so a single fund's performance never dictates your family's financial security.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" data-cursor>How do you reduce my effective tax rate beyond maxing out retirement accounts? <span class="faq-ico"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">For high earners, the leverage is in coordination: asset location, direct-index tax-loss harvesting, charitable vehicles (donor-advised funds, appreciated-stock gifting), Roth conversions in low-income windows, and deferral timing. Individually modest; together, often a material reduction in lifetime tax.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" data-cursor>Why start estate planning now if I'm decades from needing it? <span class="faq-ico"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">The most powerful transfer strategies rely on time. Assets moved into the right structures today shift future appreciation out of your taxable estate and let it compound for the next generation. Exemptions and favorable techniques also change with legislation — structuring early preserves optionality you can't reclaim later.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" data-cursor>Is Farther truly independent, or are you selling products? <span class="faq-ico"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Farther is a fee-only fiduciary, SEC-registered. We earn no commissions and sell no proprietary products. Our compensation is transparent and aligned solely with your outcomes — the same standard of care you'd demand of any institutional manager.</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="wave"><svg viewBox="0 0 1440 64" preserveAspectRatio="none"><path d="M0,34 C240,70 480,6 720,30 C960,54 1200,72 1440,32 L1440,64 L0,64 Z" fill="#F8F4F0"/></svg></div>
+</section>
+
+<!-- TEAM -->
+<section class="team-section" data-theme="light">
+  <div class="watermark light" data-par="0.10" style="top:10%; right:-2%;">ADVISORS</div>
+  <div class="container">
+    <div class="team-head reveal">
+      <div class="kicker">The Focus Team</div>
+      <span class="bar center"></span>
+      <h2 class="h2">Advisors Who Speak Your Language</h2>
+      <p>Credentialed specialists who serve professionals at the world's most sophisticated financial firms — fluent in both the technical and the personal.</p>
+    </div>
+    <div class="cred-grid">
+      <div class="cred-card reveal d1" data-cursor><div class="cred-badge">CFP</div><h4>CERTIFIED FINANCIAL PLANNER™</h4><div class="role">Holistic Strategy</div><p>Integrated planning across tax, estate, retirement, and investment.</p></div>
+      <div class="cred-card reveal d2" data-cursor><div class="cred-badge">CFA</div><h4>CFA® Charterholders</h4><div class="role">Investment Rigor</div><p>Institutional-grade analysis — they speak your professional language.</p></div>
+      <div class="cred-card reveal d3" data-cursor><div class="cred-badge">CPA</div><h4>CPA Advisors</h4><div class="role">Tax Strategy</div><p>Advanced tax planning built directly into the wealth strategy.</p></div>
+      <div class="cred-card reveal d4" data-cursor><div class="cred-badge">JD</div><h4>Estate Specialists</h4><div class="role">Legacy &amp; Transfer</div><p>Trust and generational-transfer expertise, coordinated end to end.</p></div>
+    </div>
+    <div class="team-foot reveal"><strong>24+ wealth advisors</strong> &nbsp;·&nbsp; San Francisco · New York · Boston · Dallas · Denver · Phoenix · San Diego</div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact" data-theme="dark">
+  <div class="orb-c1"></div>
+  <div class="watermark dark" data-par="0.14" style="top:18%; left:50%; transform:translateX(-50%);">FARTHER</div>
+  <div class="cta-inner reveal">
+    <div class="kicker">Begin the Conversation</div>
+    <span class="bar center"></span>
+    <h2>Your Wealth Deserves the Same Discipline You Demand</h2>
+    <p>A confidential, no-obligation conversation with a Focus Team advisor. Twenty minutes to understand where you stand — and what's possible.</p>
+    <a href="https://www.farther.com/contact" class="btn-primary" data-magnetic>Request a Private Consultation</a>
+    <div class="cta-note">Confidential &nbsp;·&nbsp; No obligation &nbsp;·&nbsp; Fewer than 2 minutes to book</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer data-theme="dark">
+  <div class="foot-inner">
+    <div class="foot-logo">
+      <div class="logo-mark" style="width:30px;height:30px;font-size:16px;">F</div>
+      <div class="logo-text" style="font-size:18px;">Farther</div>
+    </div>
+    <p>Farther Finance, Inc. is an SEC-registered investment adviser. Registration does not imply a certain level of skill or training. This material is for informational purposes only and does not constitute investment, tax, or legal advice. Farther is not affiliated with, endorsed by, or sponsored by Barings LLC or MassMutual. Consult your own tax and legal professionals regarding your specific situation.</p>
+    <div class="foot-links">
+      <a href="https://www.farther.com/privacy">Privacy</a> &nbsp;·&nbsp;
+      <a href="https://www.farther.com/terms">Terms</a> &nbsp;·&nbsp;
+      <a href="https://www.farther.com/adv">Form ADV</a>
+    </div>
+    <p>© 2026 Farther Finance, Inc. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const hoverFine = matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  /* ── INLINE SMOOTH SCROLL (self-contained, no dependencies) ── */
+  let smoothTo = null;
+  (function(){
+    if (reduceMotion || !hoverFine) return;            // touch keeps native momentum scroll
+    document.documentElement.style.scrollBehavior = 'auto';   // avoid double-animating per frame
+    let target = window.scrollY, current = target, lastSet = target, raf = null;
+    const ease = 0.12;
+    const maxY = () => Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+    function loop(){
+      if (Math.abs(window.scrollY - lastSet) > 2) { current = target = window.scrollY; } // resync external scroll
+      current += (target - current) * ease;
+      if (Math.abs(target - current) < 0.4) current = target;
+      window.scrollTo(0, current);
+      lastSet = window.scrollY;
+      raf = (current !== target) ? requestAnimationFrame(loop) : null;
+    }
+    function kick(){ if (!raf) raf = requestAnimationFrame(loop); }
+    window.addEventListener('wheel', e => {
+      if (e.ctrlKey) return;                            // allow pinch-zoom
+      e.preventDefault();
+      if (Math.abs(window.scrollY - lastSet) > 2) { current = target = window.scrollY; } // resync scrollbar drags
+      let d = e.deltaY;
+      if (e.deltaMode === 1) d *= 16; else if (e.deltaMode === 2) d *= window.innerHeight;
+      target = Math.min(Math.max(0, target + d), maxY());
+      kick();
+    }, { passive: false });
+    smoothTo = function(el, offset){
+      target = Math.min(Math.max(0, el.getBoundingClientRect().top + window.scrollY + (offset||0)), maxY());
+      kick();
+    };
+  })();
+  /* anchor links → smooth scroll */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href');
+      if (id.length < 2) return;
+      const el = document.querySelector(id);
+      if (!el) return;
+      e.preventDefault();
+      if (smoothTo) smoothTo(el, -70);
+      else el.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  /* ── NAV: scrolled + theme-aware (Godet inversion cue) ── */
+  const nav = document.getElementById('nav');
+  const themed = Array.from(document.querySelectorAll('[data-theme]'));
+  function updateNav(){
+    const y = window.scrollY;
+    nav.classList.toggle('scrolled', y > 30);
+    const probe = 38;
+    let theme = 'dark';
+    for (const sec of themed){
+      const r = sec.getBoundingClientRect();
+      if (r.top <= probe && r.bottom > probe){ theme = sec.dataset.theme; break; }
+    }
+    nav.classList.toggle('nav--dark', theme === 'dark');
+    nav.classList.toggle('nav--light', theme === 'light');
+  }
+  updateNav();
+  window.addEventListener('scroll', updateNav, { passive: true });
+
+  /* ── PARALLAX watermarks ── */
+  const parEls = Array.from(document.querySelectorAll('[data-par]')).map(el => ({
+    el, speed: parseFloat(el.dataset.par), base: el.style.transform || ''
+  }));
+  if (!reduceMotion && parEls.length){
+    const vh = () => window.innerHeight;
+    function parFrame(){
+      for (const p of parEls){
+        const r = p.el.getBoundingClientRect();
+        const offset = (r.top + r.height/2) - vh()/2;
+        const ty = -offset * p.speed;
+        p.el.style.transform = p.base + ' translate3d(0,' + ty.toFixed(1) + 'px,0)';
+      }
+      requestAnimationFrame(parFrame);
+    }
+    requestAnimationFrame(parFrame);
+  }
+
+  /* ── CUSTOM CURSOR + MAGNETIC (hover devices only) ── */
+  if (hoverFine && !reduceMotion){
+    document.body.classList.add('has-cursor');
+    const ring = document.querySelector('.cursor-ring');
+    const dot  = document.querySelector('.cursor-dot');
+    let mx = innerWidth/2, my = innerHeight/2, rx = mx, ry = my;
+    addEventListener('mousemove', e => {
+      mx = e.clientX; my = e.clientY;
+      dot.style.transform = `translate(${mx}px, ${my}px) translate(-50%, -50%)`;
+      /* ring tint based on section theme behind cursor */
+      const el = document.elementFromPoint(mx, my);
+      const sec = el && el.closest('[data-theme]');
+      ring.classList.toggle('on-dark', !!sec && sec.dataset.theme === 'dark');
+    });
+    (function ringLoop(){
+      rx += (mx-rx)*0.18; ry += (my-ry)*0.18;
+      ring.style.transform = `translate(${rx}px, ${ry}px) translate(-50%, -50%)`;
+      requestAnimationFrame(ringLoop);
+    })();
+    const hoverTargets = document.querySelectorAll('a, button, [data-cursor]');
+    hoverTargets.forEach(t => {
+      t.addEventListener('mouseenter', () => ring.classList.add('hovering'));
+      t.addEventListener('mouseleave', () => ring.classList.remove('hovering'));
+    });
+    /* magnetic */
+    document.querySelectorAll('[data-magnetic]').forEach(el => {
+      el.addEventListener('mousemove', e => {
+        const r = el.getBoundingClientRect();
+        const x = e.clientX - (r.left + r.width/2);
+        const y = e.clientY - (r.top + r.height/2);
+        el.style.transform = `translate(${x*0.28}px, ${y*0.34}px)`;
+      });
+      el.addEventListener('mouseleave', () => { el.style.transform = ''; });
+    });
+  }
+
+  /* ── SCROLL REVEAL ── */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal, .myths-head').forEach(el => io.observe(el));
+
+  /* ── FAQ ── */
+  function toggleFaq(btn){
+    const item = btn.closest('.faq-item');
+    const ans  = item.querySelector('.faq-a');
+    const open = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(el => { el.classList.remove('open'); el.querySelector('.faq-a').style.maxHeight = null; });
+    if (!open){ item.classList.add('open'); ans.style.maxHeight = ans.scrollHeight + 'px'; }
+  }
+  window.toggleFaq = toggleFaq;
+
+  /* ── STAT COUNTERS ── */
+  const cio = new IntersectionObserver((entries) => {
+    entries.forEach(en => {
+      if (!en.isIntersecting) return;
+      const el = en.target; cio.unobserve(el);
+      const target = +el.dataset.count, pre = el.dataset.prefix||'', suf = el.dataset.suffix||'';
+      const dur = 1600, t0 = performance.now();
+      (function tick(now){
+        const p = Math.min((now-t0)/dur, 1), eased = 1 - Math.pow(1-p, 3);
+        el.textContent = pre + Math.round(eased*target) + suf;
+        if (p < 1) requestAnimationFrame(tick);
+      })(t0);
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('[data-count]').forEach(c => cio.observe(c));
+
+  /* ── HERO ENTRANCE ── */
+  const hero = document.querySelector('.hero');
+  function readyHero(){ hero.classList.add('ready'); }
+  if (reduceMotion) readyHero();
+  else { window.addEventListener('load', readyHero); setTimeout(readyHero, 600); }
+
+  /* ── PARTICLE CONSTELLATION ── */
+  (function(){
+    if (reduceMotion) return;
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+    let w, h, dpr, pts = [], mouse = { x: -999, y: -999 };
+    const C = '95,208,224';
+    function size(){
+      dpr = Math.min(devicePixelRatio || 1, 2);
+      const host = canvas.parentElement;
+      w = host.clientWidth; h = host.clientHeight;
+      canvas.width = w*dpr; canvas.height = h*dpr;
+      canvas.style.width = w+'px'; canvas.style.height = h+'px';
+      ctx.setTransform(dpr,0,0,dpr,0,0);
+      const count = Math.min(Math.floor(w*h/13000), 85);
+      pts = Array.from({length: count}, () => ({ x: Math.random()*w, y: Math.random()*h, vx: (Math.random()-0.5)*0.22, vy: (Math.random()-0.5)*0.22, r: Math.random()*1.5 + 0.5 }));
+    }
+    function frame(){
+      ctx.clearRect(0,0,w,h);
+      for (const p of pts){
+        p.x += p.vx; p.y += p.vy;
+        if (p.x<0||p.x>w) p.vx*=-1; if (p.y<0||p.y>h) p.vy*=-1;
+        ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fillStyle = 'rgba('+C+',0.42)'; ctx.fill();
+      }
+      for (let i=0;i<pts.length;i++){
+        for (let j=i+1;j<pts.length;j++){
+          const a=pts[i], b=pts[j], dx=a.x-b.x, dy=a.y-b.y, d=Math.hypot(dx,dy);
+          if (d<115){ ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.strokeStyle='rgba('+C+','+(0.10*(1-d/115))+')'; ctx.lineWidth=0.55; ctx.stroke(); }
+        }
+        const a=pts[i], md=Math.hypot(a.x-mouse.x, a.y-mouse.y);
+        if (md<155){ ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(mouse.x,mouse.y); ctx.strokeStyle='rgba('+C+','+(0.17*(1-md/155))+')'; ctx.lineWidth=0.65; ctx.stroke(); }
+      }
+      requestAnimationFrame(frame);
+    }
+    addEventListener('resize', size);
+    canvas.parentElement.addEventListener('mousemove', e => { const r=canvas.getBoundingClientRect(); mouse.x=e.clientX-r.left; mouse.y=e.clientY-r.top; });
+    canvas.parentElement.addEventListener('mouseleave', () => { mouse.x=-999; mouse.y=-999; });
+    size(); frame();
+  })();
+</script>
+</body>
+</html>
