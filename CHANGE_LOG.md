@@ -1,5 +1,25 @@
 # Change Log
 
+## 2026-06-27 — Replace hero particle background with fixed premium backdrop
+
+**Summary:** Removed the particle-constellation hero + flat color blocks (felt "cheap")
+and introduced a single refined graphic that stays static while scrolling.
+
+**What changed:**
+- New `#bg-dark` fixed full-viewport backdrop: deep-navy aurora mesh + a generated
+  **guilloché engraving** (layered rosette line-work — the banknote/stock-certificate
+  motif; reads as wealth/security). Drawn once in JS, static.
+- Dark sections (hero, FAQ, footer) made transparent to reveal the backdrop; Capabilities
+  and CTA use a translucent steel veil so the graphic subtly shows through.
+- Light sections (trust, myths, split, team) get a subtle fixed aurora mesh on cream
+  (`.bg-light`, `background-attachment: fixed`) so they no longer feel flat.
+- Removed the particle canvas, drifting orbs, and hero grid + their JS/keyframes.
+
+**Validation:** visual QA in Launch preview; grep-confirmed no stale references.
+**Status:** Complete.
+
+---
+
 ## 2026-06-27 — Self-hosted fonts + GitHub Pages deploy workflow
 
 **Summary:** Removed the Google Fonts dependency (page now makes zero external requests)
