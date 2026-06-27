@@ -1,5 +1,23 @@
 # Change Log
 
+## 2026-06-27 — Self-hosted fonts + GitHub Pages deploy workflow
+
+**Summary:** Removed the Google Fonts dependency (page now makes zero external requests)
+and added an automated GitHub Pages deployment.
+
+**Files:**
+- `fonts/HankenGrotesk-latin.woff2`, `fonts/Inter-latin.woff2` — self-hosted variable
+  fonts (latin subset, full weight axis in a single file each)
+- `index.html` — replaced Google Fonts `<link>`/preconnects with local `@font-face`
+  rules using variable weight ranges (`400 800` / `300 600`)
+- `.github/workflows/deploy.yml` — deploys repo root to GitHub Pages on push to `main`
+  (configure-pages with `enablement: true`, upload-pages-artifact, deploy-pages)
+
+**Validation:** woff2 signatures verified; visual QA in Launch preview.
+**Status:** Complete — site is fully self-contained and auto-deploys.
+
+---
+
 ## 2026-06-27 — Initial commit: Farther Focus Team landing page for Barings
 
 **Summary:** Single-file marketing landing page (`index.html`) presenting the Farther
