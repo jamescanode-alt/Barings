@@ -1,10 +1,11 @@
 name: Deploy to GitHub Pages
 
-# NOTE: GitHub Pages requires a PUBLIC repo on the current account plan.
-# This repo is private, so the trigger is manual-only for now. To deploy:
-# make the repo public (or upgrade the plan), then either re-add the
-# `push` trigger below or run this workflow from the Actions tab.
+# Auto-deploys on every push to main. The repo is public and Pages is
+# enabled with source = GitHub Actions. workflow_dispatch is kept so the
+# deploy can also be run manually from the Actions tab.
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
 
 # Allow GITHUB_TOKEN to deploy to Pages
