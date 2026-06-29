@@ -36,6 +36,14 @@ logic exercised across slider extremes; all new grids collapse to single column;
 6-edit cap.
 **Status:** Complete.
 
+**Follow-up refinements (same day):**
+- Replaced the pill "chips" under the diagram (read as buttons, off-aesthetic) with a
+  single integrated summary line using hairline rule + navy keyword emphasis.
+- Moved the "Two windows" urgency section up from position 11 to directly after the
+  Siloed-vs-Unified diagram (~40% scroll vs ~85%), so time-sensitive hooks reach
+  skimming executives sooner. Flipped Capabilities to a white background to preserve
+  light/dark section alternation after the move.
+
 ## 2026-06-28 - Rebrand redesign to the Barings visual system (Impeccable + Taste skills)
 
 **Summary:** Reviewed barings.com with Firecrawl, then redesigned `index.html` end to end so a
