@@ -1,5 +1,41 @@
 # Change Log
 
+## 2026-06-28 - Conversion pass: reframe audience, fix metric, add diagram + micro-tool
+
+**Summary:** Targeted conversion-oriented changes on top of the Barings-brand redesign.
+Broadened the audience, corrected a misleading metric, elevated the independence
+disclaimer, added time-sensitive CTAs, and made the page more skimmable with a
+concept diagram and an interactive micro-assessment.
+
+**What changed:**
+- **Audience reframed** from Barings-only to senior leaders across elite asset
+  management, naming Barings, Point72, and Blackstone as example firms (hero badge,
+  meta tags, FAQ title). Reduces the "single-firm portal clone" / affiliation risk.
+- **AUM metric fixed:** replaced the misleading $481B (Barings' AUM) with **$815M**,
+  labeled "Client assets advised by the Farther Focus Team" + matching footnote.
+- **Independence disclaimer elevated** out of the deep footer into a visible strip
+  directly under the hero (shield icon), and broadened to name Barings, Point72,
+  Blackstone, and MassMutual. Full legal text retained in footer.
+- **Siloed vs Unified diagram:** new section with two SVG concept diagrams contrasting
+  four disconnected advisors (you as the only link) against Farther's hub-and-spoke
+  coordination. Makes the cost of fragmentation visual and skimmable. Replaces the
+  old text/checklist "coordinate" section (checklist preserved as compact chips).
+- **Micro-assessment ("Calculate your capital deferral efficiency"):** anonymous,
+  fully client-side 3-slider tool (bracket / % deferred / horizon) that computes an
+  efficiency score on an animated arc gauge with a tailored interpretation and a
+  consultation CTA. No data saved or sent. Labeled "illustrative, not advice."
+- **Time-sensitive CTAs:** new "windows" section. Q4 deferred-comp/409A election
+  window, plus a year-end estate & gifting window. NOTE: the estate hook is framed
+  around the annual gift-exclusion / trust-funding reset (Jan 1), NOT an "exemption
+  sunset" - the TCJA exemption was made permanent by 2025 legislation, so a sunset
+  claim would be inaccurate as of 2026.
+
+**Validation:** visual QA in Launch preview (desktop 1280 + mobile 375); assessment
+logic exercised across slider extremes; all new grids collapse to single column;
+0 em/en-dashes; eyebrow count 3 (within budget); Impeccable hook clean before the
+6-edit cap.
+**Status:** Complete.
+
 ## 2026-06-28 - Rebrand redesign to the Barings visual system (Impeccable + Taste skills)
 
 **Summary:** Reviewed barings.com with Firecrawl, then redesigned `index.html` end to end so a

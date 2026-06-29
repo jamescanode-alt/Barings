@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Private Wealth Strategy for Barings Professionals | Farther Focus Team</title>
-  <meta name="description" content="You manage institutional capital. The Farther Focus Team brings the same discipline to your own balance sheet: advanced tax deferral, estate architecture, and wealth protection for Barings professionals." />
-  <meta property="og:title" content="Private Wealth Strategy for Barings Professionals" />
+  <title>Private Wealth Strategy for Asset-Management Leaders | Farther Focus Team</title>
+  <meta name="description" content="You manage institutional capital. The Farther Focus Team brings the same discipline to your own balance sheet: advanced tax deferral, estate architecture, and wealth protection for senior professionals at firms like Barings, Point72, and Blackstone." />
+  <meta property="og:title" content="Private Wealth Strategy for Asset-Management Leaders" />
   <meta property="og:description" content="The discipline you bring to the world's largest institutions, applied to your own wealth. From the Farther Focus Team." />
   <meta property="og:type" content="website" />
   <meta name="theme-color" content="#002856" />
@@ -34,57 +34,45 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      /* Barings brand system (sampled from barings.com) */
+      /* Barings-adjacent institutional system (navy + green) */
       --navy:#002856; --navy-900:#001a3c; --navy-800:#00224b; --navy-700:#0d3a6b;
       --green:#007836; --green-deep:#006129; --green-on-dark:#4cc585;
       --paper:#f6f8fa; --paper-2:#eef1f5; --white:#ffffff;
       --ink:#16202e; --ink-soft:#4a5663; --line:rgba(0,40,86,0.12); --line-strong:rgba(0,40,86,0.20);
+      --warm:#9a6a2f; /* muted ochre, used only for "friction/leak" markers in the diagram */
       --radius:4px;
-      /* z-index scale */
       --z-bg:-2; --z-base:1; --z-content:2; --z-nav:200;
       --ease:cubic-bezier(.16,1,.3,1);
     }
 
     html { scroll-behavior: smooth; }
-
     body {
       font-family: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
       color: var(--ink); background: var(--paper); line-height: 1.6;
       overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
     }
     h1,h2,h3,.serif { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; }
-
     a { color: inherit; }
     ::selection { background: rgba(0,120,54,0.18); }
 
-    /* ── small-caps label (Barings signature, used sparingly: ≤3 on page) ── */
     .label { font-size: 12px; font-weight: 700; letter-spacing: 2.2px; text-transform: uppercase; color: var(--green-deep); }
     .label.on-dark { color: var(--green-on-dark); }
 
-    /* ── buttons (one accent = green; one radius scale) ── */
+    /* buttons (one accent = green; one radius scale) */
     .btn { display:inline-flex; align-items:center; gap:9px; font-family:inherit; font-weight:600; font-size:15px; line-height:1; text-decoration:none; padding:15px 28px; border-radius:var(--radius); border:1px solid transparent; cursor:pointer; transition: transform .15s var(--ease), background .2s, border-color .2s, box-shadow .2s; white-space:nowrap; }
     .btn-primary { background: var(--green); color:#fff; box-shadow: 0 1px 2px rgba(0,40,86,0.18); }
     .btn-primary:hover { background: var(--green-deep); transform: translateY(-1px); box-shadow: 0 6px 18px rgba(0,97,41,0.28); }
     .btn-primary:active { transform: translateY(0); }
     .btn-ghost-dark { color:#fff; border-color: rgba(255,255,255,0.34); background: transparent; }
     .btn-ghost-dark:hover { border-color: var(--green-on-dark); background: rgba(76,197,133,0.10); }
-    .btn-ghost-light { color: var(--navy); border-color: var(--line-strong); background: transparent; }
-    .btn-ghost-light:hover { border-color: var(--navy); background: rgba(0,40,86,0.04); }
     .btn svg { width:16px; height:16px; stroke:currentColor; fill:none; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
 
-    /* ── NAV (theme-aware: transparent over navy, solid on light) ── */
-    nav {
-      position: fixed; top:0; left:0; right:0; z-index: var(--z-nav);
-      display:flex; align-items:center; justify-content:space-between;
-      padding: 0 clamp(20px,5vw,56px); height: 70px;
-      transition: background .4s, box-shadow .4s, border-color .4s;
-      border-bottom: 1px solid transparent;
-    }
+    /* NAV */
+    nav { position: fixed; top:0; left:0; right:0; z-index: var(--z-nav); display:flex; align-items:center; justify-content:space-between; padding: 0 clamp(20px,5vw,56px); height: 70px; transition: background .4s, box-shadow .4s, border-color .4s; border-bottom: 1px solid transparent; }
     nav.scrolled.nav--light { background: rgba(246,248,250,0.90); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom-color: var(--line); }
     nav.scrolled.nav--dark  { background: rgba(0,26,60,0.72);  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom-color: rgba(255,255,255,0.10); }
     .nav-logo { display:flex; align-items:center; gap:11px; text-decoration:none; }
     .logo-mark { width:34px; height:34px; border-radius:var(--radius); display:flex; align-items:center; justify-content:center; font-family:'EB Garamond',serif; font-weight:700; font-size:20px; color:#fff; background: var(--navy); border:1px solid rgba(255,255,255,0.12); }
-    nav.nav--light .logo-mark { background: var(--navy); }
     .logo-text { font-family:'EB Garamond',serif; font-size:21px; font-weight:600; letter-spacing:.2px; line-height:1; transition: color .4s; color:#fff; }
     .logo-text small { display:block; font-family:'Hanken Grotesk',sans-serif; font-size:9.5px; font-weight:700; letter-spacing:2.4px; text-transform:uppercase; margin-top:3px; transition: color .4s; color: var(--green-on-dark); }
     nav.nav--light .logo-text { color: var(--navy); }
@@ -94,21 +82,12 @@
     nav.nav--light .nav-cta { background: var(--navy); color:#fff; }
     nav .nav-cta:hover { transform: translateY(-1px); }
 
-    /* ============================================================
-       HERO - navy brand block, dot-matrix motif (Barings signature)
-       ============================================================ */
+    /* ===================== HERO - navy brand block ===================== */
     .hero { position:relative; min-height: 100dvh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding: 96px clamp(20px,5vw,40px) 88px; overflow:hidden; background: var(--navy-900); color:#fff; }
-    .hero-bg { position:absolute; inset:0; z-index:0; overflow:hidden;
-      background:
-        radial-gradient(1200px 760px at 76% 8%, rgba(13,58,107,0.85), transparent 62%),
-        radial-gradient(900px 700px at 6% 92%, rgba(0,120,54,0.10), transparent 60%),
-        linear-gradient(165deg, #001a3c 0%, #002856 55%, #001631 100%);
-    }
+    .hero-bg { position:absolute; inset:0; z-index:0; overflow:hidden; background: radial-gradient(1200px 760px at 76% 8%, rgba(13,58,107,0.85), transparent 62%), radial-gradient(900px 700px at 6% 92%, rgba(0,120,54,0.10), transparent 60%), linear-gradient(165deg, #001a3c 0%, #002856 55%, #001631 100%); }
     .hero-bg svg { position:absolute; inset:0; width:100%; height:100%; }
-    #dotfield { opacity:.9; }
-    #engrave { opacity:.5; }
+    #dotfield { opacity:.9; } #engrave { opacity:.5; }
     .hero-bg::after { content:''; position:absolute; inset:0; background: radial-gradient(ellipse 70% 64% at 50% 46%, transparent 40%, rgba(0,18,46,0.62) 100%); }
-
     .hero-inner { position:relative; z-index: var(--z-content); max-width: 920px; }
     .hero-badge { display:inline-flex; align-items:center; gap:9px; font-size:12px; font-weight:700; letter-spacing:2.2px; text-transform:uppercase; color: var(--green-on-dark); padding:8px 16px; border:1px solid rgba(76,197,133,0.36); border-radius:var(--radius); margin-bottom:30px; }
     .hero-badge .tick { width:6px; height:6px; background: var(--green-on-dark); }
@@ -116,13 +95,18 @@
     .hero h1 em { font-style: italic; color: var(--green-on-dark); }
     .hero-sub { font-size: clamp(17px, 2vw, 20px); color: rgba(255,255,255,0.74); max-width: 600px; margin: 0 auto 38px; line-height: 1.7; text-wrap: pretty; }
     .hero-actions { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
-
-    /* hero load motion (gated by .ready / reduced-motion) */
     .hero-fade { opacity:0; transform: translateY(20px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
     .hero.ready .hero-fade { opacity:1; transform:none; }
     .hero.ready .d1{transition-delay:.05s}.hero.ready .d2{transition-delay:.17s}.hero.ready .d3{transition-delay:.29s}.hero.ready .d4{transition-delay:.41s}
 
-    /* ── SECTION SHELL ── */
+    /* INDEPENDENCE STRIP (elevated disclaimer + audience) */
+    .independence { background: var(--paper-2); border-bottom:1px solid var(--line); padding: 16px clamp(20px,5vw,40px); }
+    .independence-row { max-width: 1000px; margin:0 auto; display:flex; align-items:center; justify-content:center; gap:13px; text-align:center; }
+    .independence svg { width:20px; height:20px; flex-shrink:0; stroke: var(--green-deep); fill:none; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; }
+    .independence p { font-size:13.5px; color: var(--ink-soft); line-height:1.55; }
+    .independence strong { color: var(--navy); font-weight:600; }
+
+    /* SECTION SHELL */
     section { position:relative; padding: clamp(72px,9vw,116px) clamp(20px,5vw,40px); }
     .container { max-width: 1140px; margin:0 auto; }
     .lead { font-size: clamp(28px,3.6vw,46px); font-weight:500; line-height:1.14; letter-spacing:-0.3px; text-wrap:balance; }
@@ -130,7 +114,7 @@
     .reveal.in { opacity:1; transform:none; }
     .reveal.r1{transition-delay:.06s}.reveal.r2{transition-delay:.14s}.reveal.r3{transition-delay:.22s}
 
-    /* ── STATS BAND (light, inline figures, hairline separated) ── */
+    /* STATS BAND */
     .stats { background: var(--white); border-bottom:1px solid var(--line); padding: clamp(40px,5vw,56px) clamp(20px,5vw,40px); }
     .stats-row { max-width: 1140px; margin:0 auto; display:grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px,4vw,56px); }
     @media (max-width:680px){ .stats-row{ grid-template-columns:1fr; gap:28px; } }
@@ -141,7 +125,7 @@
     .stat-value .u { color: var(--green-deep); }
     .stat-label { font-size:13.5px; color: var(--ink-soft); margin-top:12px; line-height:1.5; }
 
-    /* ── BLIND SPOT (light): lead statement + 3 conviction blocks ── */
+    /* BLIND SPOT */
     .blind { background: var(--paper); }
     .blind-head { max-width: 760px; margin: 0 auto clamp(44px,5vw,60px); }
     .blind-head .lead { color: var(--navy); }
@@ -155,20 +139,43 @@
     .conv .reality { font-size:11px; font-weight:700; letter-spacing:1.6px; text-transform:uppercase; color: var(--green-deep); margin-bottom:10px; }
     .conv p { font-size:15px; color: var(--ink-soft); line-height:1.72; }
 
-    /* ── CAPABILITIES (light, editorial 2-col list with hairlines + thin icons) ── */
-    .cap { background: var(--white); }
+    /* ===================== COMPARE (Siloed vs Unified diagram) ===================== */
+    .compare { background: var(--white); }
+    .compare-head { max-width: 760px; margin: 0 auto clamp(40px,5vw,56px); }
+    .compare-head .lead { color: var(--navy); }
+    .compare-head p { font-size:17px; color: var(--ink-soft); margin-top:16px; line-height:1.7; max-width: 62ch; }
+    .compare-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    @media (max-width:820px){ .compare-grid{ grid-template-columns:1fr; } }
+    .panel { border:1px solid var(--line-strong); border-radius: var(--radius); padding: 28px 26px 30px; background: var(--white); }
+    .panel.unified { background: linear-gradient(180deg, rgba(0,120,54,0.05), rgba(0,120,54,0.02)); border-color: rgba(0,120,54,0.30); }
+    .panel-tag { display:inline-block; font-size:11px; font-weight:700; letter-spacing:1.6px; text-transform:uppercase; padding:5px 11px; border-radius:3px; margin-bottom:18px; }
+    .panel.siloed .panel-tag { color: var(--warm); background: rgba(154,106,47,0.10); }
+    .panel.unified .panel-tag { color: var(--green-deep); background: rgba(0,120,54,0.10); }
+    .panel h3 { font-size:22px; font-weight:600; color: var(--navy); margin-bottom:6px; }
+    .panel .diagram { width:100%; height:auto; display:block; margin: 10px 0 18px; }
+    .panel .diagram text { font-family:'Hanken Grotesk',sans-serif; }
+    .panel .cap { font-size:14.5px; color: var(--ink-soft); line-height:1.6; }
+    .panel.unified .cap strong { color: var(--green-deep); font-weight:600; }
+    .compare-foot { margin-top: 30px; }
+    .compare-foot .small-label { font-size:13px; font-weight:700; letter-spacing:.4px; color: var(--navy); margin-bottom:14px; }
+    .chips { display:flex; flex-wrap:wrap; gap:9px; }
+    .chip { font-size:13.5px; color: var(--ink); padding:8px 14px; border:1px solid var(--line-strong); border-radius:100px; display:inline-flex; align-items:center; gap:8px; background: var(--paper); }
+    .chip svg { width:13px; height:13px; stroke: var(--green); fill:none; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round; }
+
+    /* CAPABILITIES */
+    .cap-sec { background: var(--paper); }
     .cap-head { max-width: 720px; margin: 0 auto clamp(40px,5vw,56px); text-align:center; }
     .cap-head .lead { color: var(--navy); }
     .cap-head p { font-size:17px; color: var(--ink-soft); margin-top:16px; line-height:1.7; max-width:60ch; margin-left:auto; margin-right:auto; }
     .cap-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 0 56px; border-top:1px solid var(--line-strong); }
-    @media (max-width:780px){ .cap-grid{ grid-template-columns:1fr; gap:0; } }
+    @media (max-width:780px){ .cap-grid{ grid-template-columns:1fr; } }
     .cap-item { display:grid; grid-template-columns: 44px 1fr; gap:20px; padding: 30px 0; border-bottom:1px solid var(--line); }
     .cap-ico { width:44px; height:44px; display:flex; align-items:center; justify-content:center; border:1px solid var(--line-strong); border-radius:var(--radius); color: var(--navy); }
     .cap-ico svg { width:22px; height:22px; stroke: currentColor; fill:none; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; }
     .cap-item h3 { font-size:21px; font-weight:600; color: var(--navy); margin-bottom:7px; line-height:1.2; }
     .cap-item p { font-size:14.5px; color: var(--ink-soft); line-height:1.66; }
 
-    /* ── CONVICTION (navy brand block, mid-page) ── */
+    /* CONVICTION (navy) */
     .creed { position:relative; overflow:hidden; background: var(--navy); color:#fff; text-align:center; padding: clamp(84px,10vw,128px) clamp(20px,5vw,40px); }
     .creed-bg { position:absolute; inset:0; z-index:0; }
     .creed-bg svg { position:absolute; inset:0; width:100%; height:100%; opacity:.45; }
@@ -178,21 +185,40 @@
     .creed blockquote em { font-style:italic; color: var(--green-on-dark); }
     .creed p { font-size:17px; color: rgba(255,255,255,0.74); margin-top:26px; line-height:1.72; max-width: 58ch; margin-left:auto; margin-right:auto; }
 
-    /* ── COORDINATE (light, split: copy + checklist) ── */
-    .coord { background: var(--paper); }
-    .coord-grid { display:grid; grid-template-columns: 0.95fr 1.05fr; gap: clamp(36px,6vw,76px); align-items:center; }
-    @media (max-width:840px){ .coord-grid{ grid-template-columns:1fr; gap:36px; } }
-    .coord-copy .lead { color: var(--navy); margin-bottom:18px; }
-    .coord-copy p { font-size:16px; color: var(--ink-soft); line-height:1.78; margin-bottom:14px; max-width:54ch; }
-    .coord-copy strong { color: var(--navy); font-weight:600; }
-    .coord-list { list-style:none; }
-    .coord-list li { display:flex; align-items:center; gap:15px; padding:16px 4px; border-bottom:1px solid var(--line); font-size:15.5px; color: var(--ink); }
-    .coord-list li:first-child { border-top:1px solid var(--line); }
-    .coord-check { width:24px; height:24px; flex-shrink:0; display:flex; align-items:center; justify-content:center; background: var(--green); border-radius:50%; }
-    .coord-check svg { width:13px; height:13px; stroke:#fff; fill:none; stroke-width:2.6; stroke-linecap:round; stroke-linejoin:round; }
+    /* ===================== ASSESSMENT (micro-tool) ===================== */
+    .assess { background: var(--white); }
+    .assess-head { max-width: 720px; margin: 0 auto clamp(36px,4vw,48px); text-align:center; }
+    .assess-head .lead { color: var(--navy); margin-top:14px; }
+    .assess-head p { font-size:16.5px; color: var(--ink-soft); margin-top:14px; line-height:1.65; max-width:60ch; margin-left:auto; margin-right:auto; }
+    .assess-card { max-width: 980px; margin: 0 auto; border:1px solid var(--line-strong); border-radius: 10px; overflow:hidden; display:grid; grid-template-columns: 1.15fr 0.85fr; box-shadow: 0 18px 50px rgba(0,40,86,0.08); }
+    @media (max-width:820px){ .assess-card{ grid-template-columns:1fr; } }
+    .assess-inputs { padding: clamp(28px,4vw,40px); }
+    .field { margin-bottom: 30px; }
+    .field:last-child { margin-bottom: 0; }
+    .field-top { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:14px; gap:12px; }
+    .field-top label { font-size:15px; font-weight:600; color: var(--navy); }
+    .field-val { font-family:'EB Garamond',serif; font-size:24px; font-weight:600; color: var(--green-deep); line-height:1; white-space:nowrap; }
+    input[type=range] { -webkit-appearance:none; appearance:none; width:100%; height:5px; border-radius:3px; background: linear-gradient(90deg, var(--green) var(--fill,30%), var(--line-strong) var(--fill,30%)); outline:none; cursor:pointer; }
+    input[type=range]::-webkit-slider-thumb { -webkit-appearance:none; appearance:none; width:24px; height:24px; border-radius:50%; background: var(--green); border:3px solid #fff; box-shadow:0 1px 5px rgba(0,40,86,0.30); cursor:pointer; transition: transform .12s var(--ease); }
+    input[type=range]::-webkit-slider-thumb:hover { transform: scale(1.12); }
+    input[type=range]::-moz-range-thumb { width:24px; height:24px; border-radius:50%; background: var(--green); border:3px solid #fff; box-shadow:0 1px 5px rgba(0,40,86,0.30); cursor:pointer; }
+    input[type=range]:focus-visible { outline:2px solid var(--green); outline-offset:6px; }
+    .field-scale { display:flex; justify-content:space-between; font-size:11.5px; color: var(--ink-soft); margin-top:8px; }
+    .assess-result { background: var(--navy); color:#fff; padding: clamp(28px,4vw,40px); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; }
+    .gauge-wrap { position:relative; width:170px; height:170px; margin-bottom:6px; }
+    .gauge { width:170px; height:170px; transform: rotate(-90deg); }
+    .g-track { fill:none; stroke: rgba(255,255,255,0.16); stroke-width:11; }
+    .g-fill { fill:none; stroke: var(--green-on-dark); stroke-width:11; stroke-linecap:round; transition: stroke-dashoffset .55s var(--ease); }
+    .gauge-num { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+    .gauge-num b { font-family:'EB Garamond',serif; font-size:46px; font-weight:600; line-height:1; }
+    .gauge-num span { font-size:11px; letter-spacing:1.6px; text-transform:uppercase; color: rgba(255,255,255,0.6); margin-top:6px; }
+    .assess-band { font-size:13px; font-weight:700; letter-spacing:1.4px; text-transform:uppercase; color: var(--green-on-dark); margin: 10px 0 8px; }
+    .assess-interp { font-size:14.5px; color: rgba(255,255,255,0.82); line-height:1.6; max-width:34ch; margin-bottom:22px; min-height: 3em; }
+    .assess-result .btn-primary { width:100%; justify-content:center; }
+    .assess-disclaimer { font-size:11.5px; color: rgba(255,255,255,0.5); margin-top:14px; line-height:1.5; }
 
-    /* ── FAQ (light, accordion) ── */
-    .faq { background: var(--white); }
+    /* FAQ */
+    .faq { background: var(--paper); }
     .faq-head { text-align:center; max-width:640px; margin:0 auto clamp(36px,4vw,48px); }
     .faq-head .lead { color: var(--navy); }
     .faq-head p { font-size:17px; color: var(--ink-soft); margin-top:14px; }
@@ -204,14 +230,13 @@
     .faq-ico::before { top:8px; left:0; width:18px; height:1.6px; }
     .faq-ico::after  { left:8px; top:0; width:1.6px; height:18px; }
     .faq-item.open .faq-ico::after { transform: rotate(90deg); opacity:0; }
-    /* grid-rows accordion: animates a CSS grid track, not a layout box (no thrash) */
     .faq-a { display:grid; grid-template-rows: 0fr; transition: grid-template-rows .4s var(--ease); }
     .faq-item.open .faq-a { grid-template-rows: 1fr; }
     .faq-a-inner { overflow:hidden; min-height:0; padding: 0 8px; font-size:15.5px; color: var(--ink-soft); line-height:1.8; max-width: 70ch; }
     .faq-item.open .faq-a-inner { padding-bottom: 26px; }
 
-    /* ── TEAM (light, inline typographic credentials, not cards) ── */
-    .team { background: var(--paper); }
+    /* TEAM */
+    .team { background: var(--white); }
     .team-head { text-align:center; max-width:660px; margin:0 auto clamp(40px,5vw,54px); }
     .team-head .lead { color: var(--navy); }
     .team-head p { font-size:17px; color: var(--ink-soft); margin-top:16px; line-height:1.7; }
@@ -226,7 +251,22 @@
     .team-foot { text-align:center; margin-top:40px; font-size:15px; color: var(--ink-soft); }
     .team-foot strong { color: var(--navy); font-weight:600; }
 
-    /* ── CTA (navy brand block, closing) ── */
+    /* ===================== TIMELY WINDOWS ===================== */
+    .windows { background: var(--paper); }
+    .windows-head { max-width: 720px; margin: 0 auto clamp(36px,4vw,48px); text-align:center; }
+    .windows-head .lead { color: var(--navy); }
+    .windows-head p { font-size:16.5px; color: var(--ink-soft); margin-top:14px; line-height:1.65; }
+    .windows-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 22px; max-width: 980px; margin:0 auto; }
+    @media (max-width:760px){ .windows-grid{ grid-template-columns:1fr; } }
+    .window { background: var(--white); border:1px solid var(--line-strong); border-radius: var(--radius); padding: 30px 28px; display:flex; flex-direction:column; }
+    .window-top { display:flex; align-items:center; gap:12px; margin-bottom:16px; }
+    .window-ico { width:40px; height:40px; flex-shrink:0; border-radius:var(--radius); display:flex; align-items:center; justify-content:center; background: rgba(0,120,54,0.08); border:1px solid rgba(0,120,54,0.22); color: var(--green-deep); }
+    .window-ico svg { width:20px; height:20px; stroke:currentColor; fill:none; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; }
+    .window-when { font-size:11.5px; font-weight:700; letter-spacing:1.4px; text-transform:uppercase; color: var(--green-deep); }
+    .window h3 { font-size:19px; font-weight:600; color: var(--navy); margin-top:3px; line-height:1.2; }
+    .window p { font-size:14.5px; color: var(--ink-soft); line-height:1.7; }
+
+    /* CTA (navy) */
     .cta { position:relative; overflow:hidden; text-align:center; background: var(--navy-900); color:#fff; padding: clamp(88px,11vw,140px) clamp(20px,5vw,40px); }
     .cta-bg { position:absolute; inset:0; z-index:0; background: radial-gradient(900px 600px at 50% -10%, rgba(13,58,107,0.7), transparent 60%); }
     .cta-bg svg { position:absolute; inset:0; width:100%; height:100%; opacity:.6; }
@@ -236,18 +276,17 @@
     .cta .btn-primary { padding: 16px 34px; font-size:16px; }
     .cta-note { margin-top:22px; font-size:13.5px; color: rgba(255,255,255,0.58); }
 
-    /* ── FOOTER ── */
+    /* FOOTER */
     footer { background: var(--navy-900); color:#fff; padding: 54px clamp(20px,5vw,40px) 40px; border-top:1px solid rgba(255,255,255,0.08); }
     .foot-inner { max-width:1140px; margin:0 auto; text-align:center; }
     .foot-logo { display:inline-flex; align-items:center; gap:11px; margin-bottom:22px; }
     .foot-logo .logo-text { color:#fff; font-size:19px; }
-    footer p { font-size:12.5px; color: rgba(255,255,255,0.50); line-height:1.8; max-width:780px; margin:0 auto; }
+    footer p { font-size:12.5px; color: rgba(255,255,255,0.50); line-height:1.8; max-width:820px; margin:0 auto; }
     footer a { color: rgba(255,255,255,0.66); text-decoration:none; transition: color .2s; }
     footer a:hover { color: var(--green-on-dark); }
     .foot-links { margin:18px 0; font-size:13px; }
     .foot-links a { margin: 0 10px; }
 
-    /* ── reduced motion ── */
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior:auto; }
       *, *::before, *::after { animation: none !important; transition: none !important; }
@@ -266,7 +305,7 @@
   <a href="#contact" class="btn nav-cta">Request a consultation</a>
 </nav>
 
-<!-- ============================================================ HERO -->
+<!-- HERO -->
 <header class="hero" id="top" data-theme="dark">
   <div class="hero-bg" aria-hidden="true">
     <svg id="engrave" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
@@ -282,26 +321,33 @@
       <g id="dot-group"></g>
     </svg>
   </div>
-
   <div class="hero-inner">
-    <div class="hero-badge hero-fade d1"><span class="tick"></span> For professionals at Barings</div>
+    <div class="hero-badge hero-fade d1"><span class="tick"></span> For leaders in elite asset management</div>
     <h1 class="hero-fade d2">You manage institutional capital.<br>Who manages <em>yours?</em></h1>
     <p class="hero-sub hero-fade d3">The discipline you bring to the world's largest institutions, applied to your own balance sheet. Tax, estate, and equity strategy.</p>
     <div class="hero-actions hero-fade d4">
       <a href="#contact" class="btn btn-primary">Request a consultation
         <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
-      <a href="#capabilities" class="btn btn-ghost-dark">See our approach</a>
+      <a href="#assessment" class="btn btn-ghost-dark">Score your strategy in 60 seconds</a>
     </div>
   </div>
 </header>
+
+<!-- INDEPENDENCE STRIP (elevated disclaimer + audience) -->
+<div class="independence" data-theme="light">
+  <div class="independence-row">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 4v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V7z"/><path d="M9 12l2 2 4-4"/></svg>
+    <p><strong>Farther is an independent, fee-only fiduciary.</strong> We serve senior professionals at firms like Barings, Point72, and Blackstone, and are not affiliated with, endorsed by, or sponsored by any of them.</p>
+  </div>
+</div>
 
 <!-- STATS BAND -->
 <section class="stats" data-theme="light" aria-label="At a glance">
   <div class="stats-row">
     <div class="stat reveal">
-      <div class="stat-value">$481<span class="u">B</span></div>
-      <div class="stat-label">Assets under management at Barings<sup>*</sup></div>
+      <div class="stat-value">$815<span class="u">M</span></div>
+      <div class="stat-label">Client assets advised by the Farther Focus Team<sup>*</sup></div>
     </div>
     <div class="stat reveal r1">
       <div class="stat-value">100<span class="u">%</span></div>
@@ -341,8 +387,97 @@
   </div>
 </section>
 
+<!-- COMPARE: Siloed vs Unified -->
+<section class="compare" data-theme="light">
+  <div class="container">
+    <div class="compare-head reveal">
+      <h2 class="lead">Most senior professionals have four advisors who never speak.</h2>
+      <p>A CPA, an estate attorney, a corporate benefits desk, and a retail investment advisor, each optimizing one corner in isolation. The gaps between them are where six and seven figures quietly leak.</p>
+    </div>
+    <div class="compare-grid">
+      <!-- SILOED -->
+      <div class="panel siloed reveal">
+        <span class="panel-tag">The siloed default</span>
+        <h3>Four relationships, no plan</h3>
+        <svg class="diagram" viewBox="0 0 340 250" role="img" aria-label="You at the center, weakly and separately connected to a CPA, estate attorney, benefits desk, and investment advisor, who never connect to each other.">
+          <g stroke="var(--warm)" stroke-width="1.3" stroke-dasharray="4 5" opacity="0.55" fill="none">
+            <line x1="170" y1="125" x2="64" y2="52"/>
+            <line x1="170" y1="125" x2="276" y2="52"/>
+            <line x1="170" y1="125" x2="64" y2="198"/>
+            <line x1="170" y1="125" x2="276" y2="198"/>
+          </g>
+          <g fill="none" stroke="var(--line-strong)" stroke-width="1.4">
+            <circle cx="64" cy="52" r="30" fill="#fff"/>
+            <circle cx="276" cy="52" r="30" fill="#fff"/>
+            <circle cx="64" cy="198" r="30" fill="#fff"/>
+            <circle cx="276" cy="198" r="30" fill="#fff"/>
+          </g>
+          <circle cx="170" cy="125" r="34" fill="var(--navy)"/>
+          <g fill="var(--navy)" font-size="12.5" font-weight="600" text-anchor="middle">
+            <text x="64" y="49">CPA</text>
+            <text x="276" y="46">Estate</text>
+            <text x="276" y="60">attorney</text>
+            <text x="64" y="195">Benefits</text>
+            <text x="64" y="209">desk</text>
+            <text x="276" y="195">Investment</text>
+            <text x="276" y="209">advisor</text>
+          </g>
+          <text x="170" y="129" fill="#fff" font-size="13" font-weight="700" text-anchor="middle">You</text>
+        </svg>
+        <p class="cap">You are the only thing connecting them. Decisions in one corner quietly break the plan in another.</p>
+      </div>
+      <!-- UNIFIED -->
+      <div class="panel unified reveal r1">
+        <span class="panel-tag">The Farther approach</span>
+        <h3>One coordinated plan</h3>
+        <svg class="diagram" viewBox="0 0 340 250" role="img" aria-label="The Farther Focus Team at the hub, connecting you and every specialist into one coordinated plan.">
+          <g stroke="var(--green)" stroke-width="1.8" opacity="0.85">
+            <line x1="170" y1="125" x2="170" y2="40"/>
+            <line x1="170" y1="125" x2="300" y2="95"/>
+            <line x1="170" y1="125" x2="252" y2="212"/>
+            <line x1="170" y1="125" x2="88" y2="212"/>
+            <line x1="170" y1="125" x2="40" y2="95"/>
+          </g>
+          <g stroke="var(--green)" stroke-width="1.5" fill="#fff">
+            <circle cx="170" cy="40" r="28"/>
+            <circle cx="300" cy="95" r="28"/>
+            <circle cx="252" cy="212" r="28"/>
+            <circle cx="88" cy="212" r="28"/>
+            <circle cx="40" cy="95" r="28"/>
+          </g>
+          <circle cx="170" cy="125" r="38" fill="var(--green)"/>
+          <g fill="var(--navy)" font-size="11.5" font-weight="600" text-anchor="middle">
+            <text x="170" y="44">You</text>
+            <text x="300" y="99">CPA</text>
+            <text x="252" y="209">Estate</text>
+            <text x="252" y="222">atty</text>
+            <text x="88" y="209">Benefits</text>
+            <text x="40" y="92">Invest-</text>
+            <text x="40" y="105">ment</text>
+          </g>
+          <text x="170" y="122" fill="#fff" font-size="13.5" font-weight="700" text-anchor="middle">Farther</text>
+          <text x="170" y="138" fill="rgba(255,255,255,0.85)" font-size="9.5" text-anchor="middle">FOCUS TEAM</text>
+        </svg>
+        <p class="cap">One advisor coordinates every specialist around a <strong>single plan</strong>, so each decision reinforces the next.</p>
+      </div>
+    </div>
+    <div class="compare-foot reveal">
+      <div class="small-label">One plan, coordinating every moving part:</div>
+      <div class="chips">
+        <span class="chip"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg> Deferred comp &amp; 409A elections</span>
+        <span class="chip"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg> Equity, carry &amp; co-investments</span>
+        <span class="chip"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg> Multi-year tax &amp; Roth sequencing</span>
+        <span class="chip"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg> Trust, gifting &amp; transfer</span>
+        <span class="chip"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg> Charitable vehicles</span>
+        <span class="chip"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg> Retirement &amp; benefits</span>
+        <span class="chip"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg> Asset protection &amp; insurance</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CAPABILITIES -->
-<section class="cap" id="capabilities" data-theme="light">
+<section class="cap-sec" id="capabilities" data-theme="light">
   <div class="container">
     <div class="cap-head reveal">
       <span class="label">Our capabilities</span>
@@ -378,7 +513,7 @@
   </div>
 </section>
 
-<!-- CONVICTION (navy brand block) -->
+<!-- CONVICTION (navy) -->
 <section class="creed" data-theme="dark">
   <div class="creed-bg" aria-hidden="true">
     <svg viewBox="0 0 1440 600" preserveAspectRatio="xMidYMid slice"><g id="creed-dots"></g></svg>
@@ -390,24 +525,47 @@
   </div>
 </section>
 
-<!-- COORDINATE -->
-<section class="coord" data-theme="light">
-  <div class="container coord-grid">
-    <div class="coord-copy reveal">
-      <h2 class="lead">Every decision, in one strategy.</h2>
-      <p>Deferred comp, equity, estate, and benefits are not separate problems. They are one system, and they move together.</p>
-      <p><strong>No silos. No hand-offs. No piece left to chance.</strong></p>
+<!-- ASSESSMENT (micro-tool) -->
+<section class="assess" id="assessment" data-theme="light">
+  <div class="container">
+    <div class="assess-head reveal">
+      <span class="label">Anonymous 60-second tool</span>
+      <h2 class="lead">Calculate your capital deferral efficiency.</h2>
+      <p>Three quick questions. No email, nothing saved. See how much of your deferral opportunity you are likely capturing today, and where the gap is.</p>
     </div>
-    <div class="reveal r1">
-      <ul class="coord-list">
-        <li><span class="coord-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span> Deferred compensation &amp; 409A election strategy</li>
-        <li><span class="coord-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span> Equity, carry &amp; co-investment planning</li>
-        <li><span class="coord-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span> Multi-year tax &amp; Roth conversion sequencing</li>
-        <li><span class="coord-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span> Trust, gifting &amp; generational transfer</li>
-        <li><span class="coord-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span> Charitable &amp; philanthropic vehicles</li>
-        <li><span class="coord-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span> 401(k), retirement &amp; benefits optimization</li>
-        <li><span class="coord-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span> Asset protection &amp; insurance review</li>
-      </ul>
+    <div class="assess-card reveal r1">
+      <div class="assess-inputs">
+        <div class="field">
+          <div class="field-top"><label for="s-bracket">Your top marginal tax bracket</label><span class="field-val" id="v-bracket">37%</span></div>
+          <input type="range" id="s-bracket" min="32" max="50" step="1" value="37" />
+          <div class="field-scale"><span>32%</span><span>50%+</span></div>
+        </div>
+        <div class="field">
+          <div class="field-top"><label for="s-defer">Share of eligible comp you defer today</label><span class="field-val" id="v-defer">20%</span></div>
+          <input type="range" id="s-defer" min="0" max="100" step="5" value="20" />
+          <div class="field-scale"><span>0%</span><span>100%</span></div>
+        </div>
+        <div class="field">
+          <div class="field-top"><label for="s-years">Years until you'll need this capital</label><span class="field-val" id="v-years">10 yrs</span></div>
+          <input type="range" id="s-years" min="1" max="20" step="1" value="10" />
+          <div class="field-scale"><span>1 yr</span><span>20+ yrs</span></div>
+        </div>
+      </div>
+      <div class="assess-result">
+        <div class="gauge-wrap">
+          <svg class="gauge" viewBox="0 0 170 170" aria-hidden="true">
+            <circle class="g-track" cx="85" cy="85" r="68"/>
+            <circle class="g-fill" id="g-fill" cx="85" cy="85" r="68"/>
+          </svg>
+          <div class="gauge-num"><b id="score-num">--</b><span>Efficiency</span></div>
+        </div>
+        <div class="assess-band" id="score-band">&nbsp;</div>
+        <p class="assess-interp" id="score-interp">Adjust the sliders to estimate your score.</p>
+        <a href="#contact" class="btn btn-primary">Request a consultation
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <p class="assess-disclaimer">Illustrative estimate only. Not tax, legal, or investment advice.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -416,7 +574,7 @@
 <section class="faq" data-theme="light">
   <div class="container">
     <div class="faq-head reveal">
-      <h2 class="lead">What Barings professionals ask us.</h2>
+      <h2 class="lead">What asset-management leaders ask us.</h2>
       <p>Direct answers to the strategic questions a benefits portal cannot address.</p>
     </div>
     <div class="faq-list reveal r1">
@@ -461,6 +619,32 @@
   </div>
 </section>
 
+<!-- TIMELY WINDOWS -->
+<section class="windows" data-theme="light">
+  <div class="container">
+    <div class="windows-head reveal">
+      <h2 class="lead">Two windows worth acting on now.</h2>
+      <p>The most valuable moves are calendar-bound. Miss the window and the option is gone for the year.</p>
+    </div>
+    <div class="windows-grid">
+      <div class="window reveal">
+        <div class="window-top">
+          <span class="window-ico"><svg viewBox="0 0 24 24"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="9"/></svg></span>
+          <div><div class="window-when">This Q4</div><h3>Deferred-comp election window</h3></div>
+        </div>
+        <p>Most 409A elections for next year's compensation must be locked by December 31, and the choice is irreversible for the year. Maximize your strategy before the window closes.</p>
+      </div>
+      <div class="window reveal r1">
+        <div class="window-top">
+          <span class="window-ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></span>
+          <div><div class="window-when">Before year-end</div><h3>Estate &amp; gifting architecture</h3></div>
+        </div>
+        <p>Annual gift-exclusion gifts and many trust-funding moves reset every January 1. Lock in your estate and gifting architecture while this year's exemption and exclusions are still available.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CTA -->
 <section class="cta" id="contact" data-theme="dark">
   <div class="cta-bg" aria-hidden="true">
@@ -483,7 +667,7 @@
       <span class="logo-mark" style="width:30px;height:30px;font-size:17px;">F</span>
       <span class="logo-text">Farther</span>
     </div>
-    <p><sup>*</sup>$481B refers to assets under management at Barings LLC, not assets managed by Farther. Farther Finance, Inc. is an SEC-registered investment adviser. Registration does not imply a certain level of skill or training. This material is for informational purposes only and does not constitute investment, tax, or legal advice. Farther is not affiliated with, endorsed by, or sponsored by Barings LLC or MassMutual. Consult your own tax and legal professionals regarding your specific situation.</p>
+    <p><sup>*</sup>$815M reflects client assets advised by the Farther Focus Team. Farther Finance, Inc. is an SEC-registered investment adviser. Registration does not imply a certain level of skill or training. This material is for informational purposes only and does not constitute investment, tax, or legal advice. Farther is not affiliated with, endorsed by, or sponsored by Barings, Point72, Blackstone, MassMutual, or any other firm referenced. Consult your own tax and legal professionals regarding your specific situation.</p>
     <div class="foot-links">
       <a href="https://www.farther.com/privacy">Privacy</a>
       <a href="https://www.farther.com/terms">Terms</a>
@@ -496,7 +680,7 @@
 <script>
   const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ── Anchor smooth-scroll with nav offset (native behavior, no wheel hijack) ── */
+  /* Anchor smooth-scroll with nav offset */
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       const id = a.getAttribute('href');
@@ -509,7 +693,7 @@
     });
   });
 
-  /* ── NAV: scrolled state + theme-aware inversion over each section ── */
+  /* NAV: scrolled + theme-aware inversion */
   const nav = document.getElementById('nav');
   const themed = Array.from(document.querySelectorAll('[data-theme]'));
   function updateNav(){
@@ -525,7 +709,7 @@
   updateNav();
   window.addEventListener('scroll', updateNav, { passive: true });
 
-  /* ── SCROLL REVEAL (IntersectionObserver, motivated: paces the read) ── */
+  /* SCROLL REVEAL */
   if (!reduceMotion){
     const io = new IntersectionObserver((entries) => {
       entries.forEach(en => { if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
@@ -535,7 +719,7 @@
     document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
   }
 
-  /* ── FAQ accordion (feedback on user action) ── */
+  /* FAQ accordion */
   document.querySelectorAll('.faq-q').forEach(btn => {
     btn.addEventListener('click', () => {
       const item = btn.closest('.faq-item');
@@ -544,14 +728,11 @@
         el.classList.remove('open');
         el.querySelector('.faq-q').setAttribute('aria-expanded','false');
       });
-      if (!isOpen){
-        item.classList.add('open');
-        btn.setAttribute('aria-expanded','true');
-      }
+      if (!isOpen){ item.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
     });
   });
 
-  /* ── STAT VALUE: $481B count-up (only the numeric figure; feedback on arrival) ── */
+  /* STAT VALUE: $815M count-up */
   const statEl = document.querySelector('.stat-value');
   if (statEl && !reduceMotion){
     const sio = new IntersectionObserver((entries) => {
@@ -560,7 +741,7 @@
         const dur = 1400, t0 = performance.now();
         (function tick(now){
           const p = Math.min((now - t0)/dur, 1), eased = 1 - Math.pow(1-p, 3);
-          en.target.firstChild.textContent = '$' + Math.round(eased * 481);
+          en.target.firstChild.textContent = '$' + Math.round(eased * 815);
           if (p < 1) requestAnimationFrame(tick);
         })(t0);
       });
@@ -568,16 +749,90 @@
     sio.observe(statEl);
   }
 
-  /* ── HERO ENTRANCE ── */
+  /* ============================================================
+     MICRO-ASSESSMENT: Capital Deferral Efficiency
+     Fully client-side. Heuristic, illustrative only.
+     ============================================================ */
+  (function(){
+    const b = document.getElementById('s-bracket');
+    const d = document.getElementById('s-defer');
+    const y = document.getElementById('s-years');
+    if (!b || !d || !y) return;
+    const vB = document.getElementById('v-bracket');
+    const vD = document.getElementById('v-defer');
+    const vY = document.getElementById('v-years');
+    const numEl = document.getElementById('score-num');
+    const bandEl = document.getElementById('score-band');
+    const interpEl = document.getElementById('score-interp');
+    const fill = document.getElementById('g-fill');
+    const C = 2 * Math.PI * 68;                 // gauge circumference
+    fill.style.strokeDasharray = C.toFixed(1);
+    fill.style.strokeDashoffset = C.toFixed(1); // start empty
+
+    function paintTrack(input){
+      const pct = (input.value - input.min) / (input.max - input.min) * 100;
+      input.style.setProperty('--fill', pct.toFixed(1) + '%');
+    }
+
+    function compute(){
+      const bracket = +b.value, defer = +d.value, years = +y.value;
+      // Opportunity grows with bracket and time horizon (0..1).
+      const opportunity = ((bracket - 32) / (50 - 32)) * Math.min(years / 15, 1);
+      // Suggested deferral target for this profile: 30%..80% of eligible comp.
+      const target = 30 + opportunity * 50;
+      // How much of that target the user captures today (0..1).
+      const capture = Math.min(defer / target, 1);
+      const score = Math.round(capture * 100);
+      const gap = Math.max(Math.round(target - defer), 0);
+
+      numEl.textContent = score;
+      const off = C * (1 - score / 100);
+      fill.style.strokeDashoffset = off.toFixed(1);
+
+      let band, interp;
+      if (score < 45){
+        band = 'Underutilized';
+        interp = 'Large unrealized opportunity. Your bracket and horizon suggest deferring roughly ' + Math.round(target) + '% of eligible comp; you are near ' + defer + '%.';
+      } else if (score < 78){
+        band = 'Developing';
+        interp = 'On the right track, with room to sequence further. Closing the gap toward ~' + Math.round(target) + '% could defer materially more income.';
+      } else {
+        band = 'Well optimized';
+        interp = 'You are capturing most of the available deferral. The remaining edge is in coordination across estate, equity, and asset location.';
+      }
+      if (gap <= 0 && score >= 78){
+        interp = 'You are at or above the suggested deferral for your profile. The next edge is coordinating estate, equity, and asset location around it.';
+      }
+      bandEl.textContent = band;
+      interpEl.textContent = interp;
+    }
+
+    [b, d, y].forEach(el => el.addEventListener('input', () => {
+      vB.textContent = b.value + '%';
+      vD.textContent = d.value + '%';
+      vY.textContent = (y.value >= 20 ? '20+' : y.value) + ' yrs';
+      paintTrack(el);
+      compute();
+    }));
+    // init
+    [b, d, y].forEach(paintTrack);
+    vY.textContent = (y.value >= 20 ? '20+' : y.value) + ' yrs';
+    // delay first paint to the gauge so the fill animates in on first view
+    const aio = new IntersectionObserver((entries) => {
+      entries.forEach(en => { if (en.isIntersecting){ compute(); aio.disconnect(); } });
+    }, { threshold: 0.4 });
+    aio.observe(document.querySelector('.assess-card'));
+  })();
+
+  /* HERO ENTRANCE */
   const hero = document.querySelector('.hero');
   const readyHero = () => hero.classList.add('ready');
   if (reduceMotion) readyHero();
   else { addEventListener('load', readyHero); setTimeout(readyHero, 500); }
 
   /* ============================================================
-     SIGNATURE MOTIF - Barings dot-matrix halftone (generated SVG)
-     Dot radius scales along a diagonal gradient, the recognizable
-     Barings "fade field". Drawn once, static. Counts as real imagery.
+     SIGNATURE MOTIF - dot-matrix halftone (generated SVG)
+     Dot radius scales along a diagonal gradient. Drawn once, static.
      ============================================================ */
   const SVGNS = 'http://www.w3.org/2000/svg';
   function buildDotField(groupId, opts){
@@ -590,45 +845,36 @@
     for (let i = 0; i < cols; i++){
       for (let j = 0; j < rows; j++){
         const x = startX + i * gap;
-        const y = (opts.startY || 0) + j * gap;
-        const d = Math.hypot(x - ox, y - oy) / maxDist;     // 0 near origin → 1 far
-        const r = Math.max(0.4, maxR * (1 - d) * (1 - d));   // shrink with distance
+        const yy = (opts.startY || 0) + j * gap;
+        const dist = Math.hypot(x - ox, yy - oy) / maxDist;
+        const r = Math.max(0.4, maxR * (1 - dist) * (1 - dist));
         if (r < 0.5) continue;
         const c = document.createElementNS(SVGNS, 'circle');
         c.setAttribute('cx', x.toFixed(1));
-        c.setAttribute('cy', y.toFixed(1));
+        c.setAttribute('cy', yy.toFixed(1));
         c.setAttribute('r', r.toFixed(2));
         c.setAttribute('fill', color);
-        c.setAttribute('opacity', (opacity * (0.35 + 0.65 * (1 - d))).toFixed(3));
+        c.setAttribute('opacity', (opacity * (0.35 + 0.65 * (1 - dist))).toFixed(3));
         g.appendChild(c);
       }
     }
   }
+  buildDotField('dot-group', { cols: 46, rows: 34, gap: 30, vw: 1440, vh: 900, originX: 0.82, originY: 0.10, maxR: 4.4, color: '#7fb4ff', opacity: 0.55, startY: 20 });
+  buildDotField('dot-group', { cols: 30, rows: 20, gap: 30, vw: 1440, vh: 900, originX: 0.84, originY: 0.12, maxR: 3.0, color: '#4cc585', opacity: 0.5, startY: 20, shiftX: 80 });
+  buildDotField('creed-dots', { cols: 48, rows: 20, gap: 32, vw: 1440, vh: 600, originX: 0.5, originY: 0.5, maxR: 3.0, color: '#4cc585', opacity: 0.32, startY: 10 });
+  buildDotField('cta-dots', { cols: 48, rows: 22, gap: 32, vw: 1440, vh: 700, originX: 0.5, originY: 0.0, maxR: 3.2, color: '#7fb4ff', opacity: 0.3, startY: 10 });
 
-  /* Hero: dense field anchored top-right (Barings hero signature) */
-  buildDotField('dot-group', { cols: 46, rows: 34, gap: 30, vw: 1440, vh: 900,
-    originX: 0.82, originY: 0.10, maxR: 4.4, color: '#7fb4ff', opacity: 0.55, startY: 20 });
-  buildDotField('dot-group', { cols: 30, rows: 20, gap: 30, vw: 1440, vh: 900,
-    originX: 0.84, originY: 0.12, maxR: 3.0, color: '#4cc585', opacity: 0.5, startY: 20, shiftX: 80 });
-
-  /* Mid conviction + CTA: quieter centered fields */
-  buildDotField('creed-dots', { cols: 48, rows: 20, gap: 32, vw: 1440, vh: 600,
-    originX: 0.5, originY: 0.5, maxR: 3.0, color: '#4cc585', opacity: 0.32, startY: 10 });
-  buildDotField('cta-dots', { cols: 48, rows: 22, gap: 32, vw: 1440, vh: 700,
-    originX: 0.5, originY: 0.0, maxR: 3.2, color: '#7fb4ff', opacity: 0.3, startY: 10 });
-
-  /* ── Heritage engraving: layered guilloché rosette (banknote reference,
-        nods to Barings' 1762 lineage). Faint, behind the dot field. ── */
+  /* Heritage engraving: layered guilloche rosette, faint, behind hero dots */
   (function(){
     const g = document.getElementById('engrave-group');
     if (!g) return;
-    const cx = 1080, cy = 250;   // upper-right, behind dots
+    const cx = 1080, cy = 250;
     function rosette(A, B, petals, phase, step){
       let d = '';
       for (let t = 0; t <= Math.PI*2 + step; t += step){
         const r = A + B*Math.cos(petals*t + phase);
-        const x = cx + r*Math.cos(t), y = cy + r*Math.sin(t);
-        d += (d ? ' L' : 'M') + x.toFixed(1) + ',' + y.toFixed(1);
+        const x = cx + r*Math.cos(t), yy = cy + r*Math.sin(t);
+        d += (d ? ' L' : 'M') + x.toFixed(1) + ',' + yy.toFixed(1);
       }
       return d + 'Z';
     }

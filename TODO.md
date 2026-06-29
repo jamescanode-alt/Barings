@@ -4,7 +4,10 @@
 
 - [ ] Add real advisor headshots and bios once provided
 - [ ] Confirm specific Barings/MassMutual benefit plan names (pension, deferred comp plan names) with HR/compliance for accuracy
-- [ ] Wire up "Schedule a Call" / "Schedule Your Free Call" buttons to actual Calendly or Farther booking link
+- [ ] Wire up all "Request a consultation" CTAs (nav, hero, assessment, CTA) to the real Calendly / Farther booking link (currently the CTA section links to farther.com/contact)
+- [ ] Confirm the $815M Focus Team AUM figure with compliance, and keep it current
+- [ ] Confirm the deferral-efficiency tool's heuristic is acceptable to compliance (it is labeled illustrative / not advice, fully client-side); consider replacing with a vetted formula
+- [ ] Optionally pipe assessment results into the booking link (e.g. prefill score) if a real booking tool is connected
 - [ ] Add Google Analytics or tracking pixel if needed
 - [ ] Consider adding a testimonials/social proof section once client quotes are available
 - [x] Mobile QA - verified hero + collapsing grids at 375px in Launch preview (2026-06-28)
