@@ -1,6 +1,33 @@
 # Change Log
 
-## 2026-06-27 — Replace hero particle background with fixed premium backdrop
+## 2026-06-28 - Rebrand redesign to the Barings visual system (Impeccable + Taste skills)
+
+**Summary:** Reviewed barings.com with Firecrawl, then redesigned `index.html` end to end so a
+Barings employee reads it as peer-level and on-brand. Replaced the blue/teal "fintech" palette
+and Inter/Hanken type with the actual Barings system: navy `#002856` dominant, green `#007836`
+single accent, EB Garamond serif display + Hanken Grotesk sans, and the signature dot-matrix
+halftone motif. Applied the Impeccable + design-taste-frontend skills throughout.
+
+**What changed:**
+- **Color:** committed navy/green system sampled from Barings' CSS (was blue `#4d65ff` / teal).
+- **Type:** self-hosted EB Garamond (roman + italic) as serif display, mirroring Barings'
+  serif headlines; dropped Inter (discouraged by both skills). Hanken Grotesk kept for body/UI.
+- **Imagery:** generated SVG dot-matrix halftone field (Barings hero signature) in hero, mid-page
+  conviction block, and CTA, plus a faint heritage guilloché (nod to Barings' 1762 lineage).
+- **Removed AI-slop tells flagged by the skills:** gradient text (`background-clip:text`), custom
+  cursor, infinite marquee, per-section eyebrows (7 -> 3), hero-metric template, identical card
+  grids, scroll cue, and all em-dashes (banned by Taste; 0 remain).
+- **Layout:** navy used as deliberate "brand blocks" (hero / one conviction / CTA / footer) over
+  a clean light base; 8 sections now use distinct layout families (no repetition).
+- **FAQ accordion** rebuilt on `grid-template-rows` (no layout-thrash) per Impeccable hook.
+- **Copy:** rewrote to remove aphoristic-cadence repetition; $481B footnoted as *Barings'* AUM
+  (not Farther's) for compliance accuracy. Disclaimer/not-affiliated statement retained.
+
+**Validation:** Impeccable design hook clean ("no deterministic issues"); visual QA in Launch
+preview at desktop (1280) and mobile (375); grid collapse confirmed; 0 em/en-dashes; no stale refs.
+**Status:** Complete (not yet committed/pushed - awaiting user go-ahead).
+
+## 2026-06-27 - Replace hero particle background with fixed premium backdrop
 
 **Summary:** Removed the particle-constellation hero + flat color blocks (felt "cheap")
 and introduced a single refined graphic that stays static while scrolling.

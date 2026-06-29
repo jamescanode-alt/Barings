@@ -14,3 +14,8 @@ desktop.ini
 # Logs / temp
 *.log
 node_modules/
+
+# Firecrawl outputs / secrets — never commit
+.firecrawl/
+.env
+.env.local
