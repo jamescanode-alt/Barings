@@ -43,6 +43,25 @@ logic exercised across slider extremes; all new grids collapse to single column;
   Siloed-vs-Unified diagram (~40% scroll vs ~85%), so time-sensitive hooks reach
   skimming executives sooner. Flipped Capabilities to a white background to preserve
   light/dark section alternation after the move.
+- Moved "Two windows" again to ABOVE the diagram (after the underserved-expert
+  section); removed the diagram summary line (Capabilities lists those items below);
+  swapped windows/compare backgrounds to keep alternation.
+
+## 2026-06-29 - Copy polish for conversion
+
+**Summary:** Targeted language tightening for impact and clarity (no structural change).
+- FAQ: "fee-only fiduciary, SEC-registered" -> "fee-only, SEC-registered fiduciary"
+  (modifiers now lead the noun; reads cleanly).
+- Hero subhead: reflowed the flat trailing list into one active sentence with a colon
+  ("now working on your own balance sheet: tax, estate, and equity strategy").
+- Capabilities intro: replaced generic "high-income finance professionals" with the
+  audience's actual pay structure ("wealth is built on deferred comp, carry, and equity").
+- Final CTA: tied the outcome to a concrete, time-bound payoff ("the moves worth making
+  before year-end"), reinforcing the urgency-windows section.
+- Reviewed all remaining copy; left the strong hooks, loss-aversion, and urgency lines
+  unchanged. Note: highest-impact future add is real social proof (client testimonials),
+  which needs real quotes (already tracked in TODO).
+**Status:** Complete.
 
 ## 2026-06-28 - Rebrand redesign to the Barings visual system (Impeccable + Taste skills)
 
