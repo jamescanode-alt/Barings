@@ -1,5 +1,44 @@
 # Change Log
 
+## 2026-06-30 - Rebrand to Farther design system + nav lockup + Barings pill
+
+**Summary:** Redesigned the landing page from the Barings-mirroring system (navy
+#002856 + green #007836, EB Garamond + Hanken Grotesk) to the **full Farther
+identity** per `FARTHER_DESIGN_SYSTEM.md`, added the official Farther Focus Team
+wordmark lockup to the nav, and pointed the hero pill specifically at Barings.
+
+**What changed (`index.html`):**
+- **Color:** Limestone 50 canvas, Charcoal 900 text, Steel Blue 700 brand accent
+  (lifted to Steel 600 on dark surfaces for CTA contrast). Dark hero/creed/CTA use a
+  deep Granite/Steel gradient; footer is Charcoal 900. Aqua 500 / Pomegranate 500
+  reserved for data states only (assessment gauge = Aqua; siloed "leak" diagram = Clay).
+- **Type:** ABC Arizona Text (Light) for headlines, titles, and numerals; Fakt Pro for
+  body, UI, eyebrows, and CTAs. Self-hosted from the kit (zero external requests kept).
+- **Motif:** replaced the dot-matrix halftone + guilloche rosette with a generated
+  **Waves of Wealth** SVG (Steel/Granite resolving into Clay) behind the dark sections.
+- **Nav logo:** inlined the Farther Focus Team lockup SVG with `currentColor` so it
+  inverts by scroll theme (white over the hero, Steel Blue over light sections);
+  scaled down on mobile to clear the CTA.
+- **Hero pill:** "For leaders in elite asset management" -> "For senior professionals
+  at Barings" (audience targeting; independence strip below keeps the non-affiliation
+  disclaimer prominent).
+- Preserved all copy, the FAQ accordion, the 60-second assessment, the $815M count-up,
+  nav theme inversion, every compliance disclaimer, and the zero-external-request build.
+
+**Files:** `index.html`, `fonts/` (ABC Arizona Text + Fakt Pro added),
+`6a22df598aadf33c0978e232_focus team lockup.svg` (source asset), `PLAN_LOG.md`, `TODO.md`.
+
+**Tests/validation:** Verified in Launch preview at desktop (1280) and mobile (375):
+no horizontal overflow, grids collapse cleanly, nav logo inverts correctly, assessment
+gauge + sliders functional, no console errors. Static single-file page (no build step).
+
+**Status:** Shipped to `main` (GitHub Pages auto-deploy).
+
+**Follow-ups (see TODO.md):** convert Fakt OTF -> woff2 to cut ~540KB; remove now-unused
+EB Garamond / Hanken Grotesk / Inter font files; optional real F-symbol mark; full AA
+contrast pass on the new palette.
+
+
 ## 2026-06-28 - Conversion pass: reframe audience, fix metric, add diagram + micro-tool
 
 **Summary:** Targeted conversion-oriented changes on top of the Barings-brand redesign.

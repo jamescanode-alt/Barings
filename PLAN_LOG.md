@@ -1,5 +1,26 @@
 # Plan Log
 
+## 2026-06-30 — Rebrand landing page to Farther design standards
+
+**Task:** Redesign `index.html` from the Barings-mirroring system (navy #002856 + green #007836, EB Garamond + Hanken Grotesk) to the **full Farther identity** per `FARTHER_DESIGN_SYSTEM.md` and `farther-design-system/colors_and_type.css`.
+
+**Decisions (confirmed with user):**
+- Direction: **Full Farther identity** — Limestone 50 canvas, Charcoal 900 text, Steel Blue 700 brand lock; Granite/Steel deep blues for dark sections; Aqua 500 / Pomegranate 500 for positive/negative data states only.
+- Signature motif: **Waves of Wealth** — replace dot-matrix halftone + guilloche rosette with self-hosted generated SVG wave bands (steel/granite resolving to clay). Preserve zero-external-request architecture.
+- Type: ABC Arizona Text (Light) for headlines/titles/numerals; Fakt Pro for body/UI/eyebrows/CTAs.
+
+**Files:**
+- `fonts/` — add ABC Arizona Text + Fakt Pro (self-hosted from kit).
+- `index.html` — full re-skin: @font-face, :root tokens, all section colors, hero/creed/cta motif, JS motif generator.
+
+**Preserve:** all copy, structure, interactions (FAQ, assessment, count-up, nav theme inversion), accessibility, compliance disclaimers, zero external requests.
+
+**Risks:** Fakt ships as OTF only (heavier than woff2); keep weights lean. Verify contrast + responsive collapse in preview before declaring done.
+
+**Next steps:** copy fonts → rewrite index.html → verify desktop+mobile in preview → update TODO/CHANGE_LOG.
+
+---
+
 ## 2026-06-27 — Build Barings Focus Team Website
 
 **Task:** Create a landing page for Farther's Focus Team targeted at Barings employees, modeled on farther.com/solutions/att.

@@ -1,5 +1,12 @@
 # TODO
 
+## Farther rebrand follow-ups (2026-06-30)
+
+- [ ] Performance: Fakt Pro ships as OTF (~540KB across 4 weights). Subset + convert to woff2 to cut weight, matching the Arizona woff2 files.
+- [ ] Remove now-unused fonts in `fonts/` (EBGaramond-*.woff2, HankenGrotesk-latin.woff2, Inter-latin.woff2) once the rebrand is confirmed.
+- [ ] Optional: swap the lettered "F" logo mark for the real Farther F-symbol (`farther-design-system/assets/logos/symbol.svg`), inlined to keep zero external requests.
+- [ ] Re-confirm AA contrast on the new palette (Sky 300 badge text on granite, ink-soft captions on limestone) in a full audit.
+
 ## Follow-ups & Improvements
 
 - [ ] Add real advisor headshots and bios once provided

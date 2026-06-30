@@ -8,92 +8,117 @@
   <meta property="og:title" content="Private Wealth Strategy for Asset-Management Leaders" />
   <meta property="og:description" content="The discipline you bring to the world's largest institutions, applied to your own wealth. From the Farther Focus Team." />
   <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#002856" />
+  <meta name="theme-color" content="#31465C" />
   <style>
     /* ============================================================
-       Self-hosted variable fonts - zero external requests
+       Self-hosted brand fonts - zero external requests
        (GitHub Pages friendly, privacy-preserving)
-       Serif display: EB Garamond  ·  Sans UI/body: Hanken Grotesk
+       Display: ABC Arizona Text (Light)  ·  Sans UI/body: Fakt Pro
+       Farther design system — see FARTHER_DESIGN_SYSTEM.md
        ============================================================ */
     @font-face {
-      font-family: 'EB Garamond';
-      font-style: normal; font-weight: 400 800; font-display: swap;
-      src: url('fonts/EBGaramond-latin.woff2') format('woff2');
+      font-family: 'ABC Arizona Text';
+      font-style: normal; font-weight: 300; font-display: swap;
+      src: url('fonts/ABCArizonaText-Light.woff2') format('woff2');
     }
     @font-face {
-      font-family: 'EB Garamond';
-      font-style: italic; font-weight: 400 800; font-display: swap;
-      src: url('fonts/EBGaramond-italic-latin.woff2') format('woff2');
+      font-family: 'ABC Arizona Text';
+      font-style: italic; font-weight: 300; font-display: swap;
+      src: url('fonts/ABCArizonaText-LightItalic.woff2') format('woff2');
     }
-    @font-face {
-      font-family: 'Hanken Grotesk';
-      font-style: normal; font-weight: 400 800; font-display: swap;
-      src: url('fonts/HankenGrotesk-latin.woff2') format('woff2');
-    }
+    @font-face { font-family:'Fakt Pro'; font-style:normal; font-weight:400; font-display:swap;
+      src: url('fonts/Fakt-Normal.otf') format('opentype'); }
+    @font-face { font-family:'Fakt Pro'; font-style:normal; font-weight:500; font-display:swap;
+      src: url('fonts/Fakt-Medium.otf') format('opentype'); }
+    @font-face { font-family:'Fakt Pro'; font-style:normal; font-weight:600; font-display:swap;
+      src: url('fonts/Fakt-SemiBold.otf') format('opentype'); }
+    @font-face { font-family:'Fakt Pro'; font-style:normal; font-weight:700; font-display:swap;
+      src: url('fonts/Fakt-Bold.otf') format('opentype'); }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      /* Barings-adjacent institutional system (navy + green) */
-      --navy:#002856; --navy-900:#001a3c; --navy-800:#00224b; --navy-700:#0d3a6b;
-      --green:#007836; --green-deep:#006129; --green-on-dark:#4cc585;
-      --paper:#f6f8fa; --paper-2:#eef1f5; --white:#ffffff;
-      --ink:#16202e; --ink-soft:#4a5663; --line:rgba(0,40,86,0.12); --line-strong:rgba(0,40,86,0.20);
-      --warm:#9a6a2f; /* muted ochre, used only for "friction/leak" markers in the diagram */
-      --radius:4px;
+      /* ---- Farther tokens (subset used on this page) ---- */
+      --limestone-50:#F8F4F0; --limestone-100:#F2EAE2; --limestone-200:#E3D3C5; --limestone-300:#D1B6A0;
+      --charcoal-900:#333333; --charcoal-700:#4F4F4F; --charcoal-500:#6D6D6D; --charcoal-100:#E7E7E7;
+      --steel-700:#3B5A69; --steel-800:#334D59; --steel-600:#476F82; --steel-500:#5B8A9C; --steel-400:#7CA4B4; --steel-300:#94B5C3;
+      --granite-900:#2C3B4E; --granite-800:#31465C; --granite-500:#567EA1;
+      --smalt-500:#557A89;
+      --sky-300:#B6D0ED; --sky-200:#CBDCF2;
+      --clay-400:#9F8E75; --clay-500:#8E7B64; --clay-600:#7A6654;
+      --aqua-500:#3CC1D3; --aqua-300:#7FD6E2;
+      --pomegranate-500:#CE3657;
+      --white:#FFFFFF;
+
+      /* ---- Semantic roles + legacy aliases (names referenced in markup/JS) ---- */
+      --paper:#F8F4F0; --paper-2:#F2EAE2;
+      --ink:#333333; --ink-soft:#4F4F4F;
+      --line:#EADBCC; --line-strong:#DFCBB9;
+      --navy:#333333;          /* primary text + diagram dark fill (Charcoal 900) */
+      --navy-900:#2C3B4E;      /* deepest granite — dark-section base */
+      --navy-800:#31465C;
+      --green:#3B5A69;         /* primary accent / brand lock (Steel Blue 700) */
+      --green-deep:#334D59;    /* accent darker (Steel Blue 800) */
+      --green-on-dark:#B6D0ED; /* accent text on dark sections (Sky Blue 300) */
+      --warm:#7A6654;          /* siloed / fragmented marker (Clay 600) */
+      --radius:12px;
+      --radius-pill:9999px;
       --z-bg:-2; --z-base:1; --z-content:2; --z-nav:200;
-      --ease:cubic-bezier(.16,1,.3,1);
+      --ease:cubic-bezier(0.22, 1, 0.36, 1); /* Waves of Wealth easing */
     }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
     body {
-      font-family: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
-      color: var(--ink); background: var(--paper); line-height: 1.6;
-      overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+      font-family: 'Fakt Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      color: var(--ink); background: var(--paper); line-height: 1.6; letter-spacing: -0.01em;
+      overflow-x: hidden;
     }
-    h1,h2,h3,.serif { font-family: 'EB Garamond', Georgia, 'Times New Roman', serif; }
+    h1,h2,h3,.serif { font-family: 'ABC Arizona Text', 'Fraunces', 'Iowan Old Style', Georgia, 'Times New Roman', serif; font-weight: 400; }
     a { color: inherit; }
-    ::selection { background: rgba(0,120,54,0.18); }
+    ::selection { background: rgba(59,90,105,0.18); }
 
-    .label { font-size: 12px; font-weight: 700; letter-spacing: 2.2px; text-transform: uppercase; color: var(--green-deep); }
+    .label { font-size: 12px; font-weight: 700; letter-spacing: 2.2px; text-transform: uppercase; color: var(--green); }
     .label.on-dark { color: var(--green-on-dark); }
 
-    /* buttons (one accent = green; one radius scale) */
-    .btn { display:inline-flex; align-items:center; gap:9px; font-family:inherit; font-weight:600; font-size:15px; line-height:1; text-decoration:none; padding:15px 28px; border-radius:var(--radius); border:1px solid transparent; cursor:pointer; transition: transform .15s var(--ease), background .2s, border-color .2s, box-shadow .2s; white-space:nowrap; }
-    .btn-primary { background: var(--green); color:#fff; box-shadow: 0 1px 2px rgba(0,40,86,0.18); }
-    .btn-primary:hover { background: var(--green-deep); transform: translateY(-1px); box-shadow: 0 6px 18px rgba(0,97,41,0.28); }
+    /* buttons (one accent = Steel Blue; pill radius for CTAs) */
+    .btn { display:inline-flex; align-items:center; gap:9px; font-family:inherit; font-weight:600; font-size:15px; line-height:1; text-decoration:none; padding:15px 28px; border-radius:var(--radius-pill); border:1px solid transparent; cursor:pointer; transition: transform .15s var(--ease), background .2s, border-color .2s, box-shadow .2s; white-space:nowrap; }
+    .btn-primary { background: var(--green); color:#fff; box-shadow: 0 1px 2px rgba(51,51,51,0.10); }
+    .btn-primary:hover { background: var(--green-deep); transform: translateY(-1px); box-shadow: 0 6px 18px rgba(51,51,51,0.16); }
     .btn-primary:active { transform: translateY(0); }
+    /* Lift the primary CTA off dark granite surfaces so it reads as the primary action */
+    .hero .btn-primary, .cta .btn-primary, .assess-result .btn-primary { background: var(--steel-600); }
+    .hero .btn-primary:hover, .cta .btn-primary:hover, .assess-result .btn-primary:hover { background: var(--steel-700); }
     .btn-ghost-dark { color:#fff; border-color: rgba(255,255,255,0.34); background: transparent; }
-    .btn-ghost-dark:hover { border-color: var(--green-on-dark); background: rgba(76,197,133,0.10); }
+    .btn-ghost-dark:hover { border-color: var(--sky-300); background: rgba(182,208,237,0.12); }
     .btn svg { width:16px; height:16px; stroke:currentColor; fill:none; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
 
     /* NAV */
     nav { position: fixed; top:0; left:0; right:0; z-index: var(--z-nav); display:flex; align-items:center; justify-content:space-between; padding: 0 clamp(20px,5vw,56px); height: 70px; transition: background .4s, box-shadow .4s, border-color .4s; border-bottom: 1px solid transparent; }
-    nav.scrolled.nav--light { background: rgba(246,248,250,0.90); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom-color: var(--line); }
-    nav.scrolled.nav--dark  { background: rgba(0,26,60,0.72);  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom-color: rgba(255,255,255,0.10); }
-    .nav-logo { display:flex; align-items:center; gap:11px; text-decoration:none; }
-    .logo-mark { width:34px; height:34px; border-radius:var(--radius); display:flex; align-items:center; justify-content:center; font-family:'EB Garamond',serif; font-weight:700; font-size:20px; color:#fff; background: var(--navy); border:1px solid rgba(255,255,255,0.12); }
-    .logo-text { font-family:'EB Garamond',serif; font-size:21px; font-weight:600; letter-spacing:.2px; line-height:1; transition: color .4s; color:#fff; }
-    .logo-text small { display:block; font-family:'Hanken Grotesk',sans-serif; font-size:9.5px; font-weight:700; letter-spacing:2.4px; text-transform:uppercase; margin-top:3px; transition: color .4s; color: var(--green-on-dark); }
-    nav.nav--light .logo-text { color: var(--navy); }
-    nav.nav--light .logo-text small { color: var(--green-deep); }
-    .nav-cta { font-size:14px; padding:11px 20px; }
+    nav.scrolled.nav--light { background: rgba(248,244,240,0.90); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom-color: var(--line); }
+    nav.scrolled.nav--dark  { background: rgba(44,59,78,0.72);  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom-color: rgba(255,255,255,0.10); }
+    .nav-logo { display:flex; align-items:center; gap:11px; text-decoration:none; color:#fff; transition: color .4s; }
+    .nav-logo .brand-lockup { height:28px; width:auto; display:block; }
+    nav.nav--light .nav-logo { color: var(--steel-700); }
+    @media (max-width:520px){ .nav-logo .brand-lockup { height:22px; } .nav-cta { padding:9px 15px; font-size:13px; } }
+    .logo-mark { width:34px; height:34px; border-radius:var(--radius); display:flex; align-items:center; justify-content:center; font-family:'ABC Arizona Text',serif; font-weight:400; font-size:21px; color:#fff; background: var(--green); border:1px solid rgba(255,255,255,0.14); }
+    .logo-text { font-family:'ABC Arizona Text',serif; font-size:22px; font-weight:400; letter-spacing:.2px; line-height:1; transition: color .4s; color:#fff; }
+    .logo-text small { display:block; font-family:'Fakt Pro',sans-serif; font-size:9.5px; font-weight:700; letter-spacing:2.4px; text-transform:uppercase; margin-top:4px; transition: color .4s; color: var(--green-on-dark); }
+    .nav-cta { font-size:14px; padding:11px 22px; }
     nav.nav--dark .nav-cta { background: var(--green); color:#fff; }
-    nav.nav--light .nav-cta { background: var(--navy); color:#fff; }
+    nav.nav--light .nav-cta { background: var(--green); color:#fff; }
     nav .nav-cta:hover { transform: translateY(-1px); }
 
-    /* ===================== HERO - navy brand block ===================== */
+    /* ===================== HERO - granite brand block + Waves of Wealth ===================== */
     .hero { position:relative; min-height: 100dvh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding: 96px clamp(20px,5vw,40px) 88px; overflow:hidden; background: var(--navy-900); color:#fff; }
-    .hero-bg { position:absolute; inset:0; z-index:0; overflow:hidden; background: radial-gradient(1200px 760px at 76% 8%, rgba(13,58,107,0.85), transparent 62%), radial-gradient(900px 700px at 6% 92%, rgba(0,120,54,0.10), transparent 60%), linear-gradient(165deg, #001a3c 0%, #002856 55%, #001631 100%); }
-    .hero-bg svg { position:absolute; inset:0; width:100%; height:100%; }
-    #dotfield { opacity:.9; } #engrave { opacity:.5; }
-    .hero-bg::after { content:''; position:absolute; inset:0; background: radial-gradient(ellipse 70% 64% at 50% 46%, transparent 40%, rgba(0,18,46,0.62) 100%); }
+    .hero-bg { position:absolute; inset:0; z-index:0; overflow:hidden; background: radial-gradient(1100px 720px at 78% 6%, rgba(86,126,161,0.30), transparent 60%), radial-gradient(900px 720px at 4% 96%, rgba(122,102,84,0.20), transparent 60%), linear-gradient(165deg, #2C3B4E 0%, #31465C 54%, #28333f 100%); }
+    .hero-bg svg, .creed-bg svg, .cta-bg svg { position:absolute; inset:0; width:100%; height:100%; }
+    .hero-bg::after { content:''; position:absolute; inset:0; background: radial-gradient(ellipse 72% 66% at 50% 46%, transparent 38%, rgba(40,51,63,0.60) 100%); }
     .hero-inner { position:relative; z-index: var(--z-content); max-width: 920px; }
-    .hero-badge { display:inline-flex; align-items:center; gap:9px; font-size:12px; font-weight:700; letter-spacing:2.2px; text-transform:uppercase; color: var(--green-on-dark); padding:8px 16px; border:1px solid rgba(76,197,133,0.36); border-radius:var(--radius); margin-bottom:30px; }
-    .hero-badge .tick { width:6px; height:6px; background: var(--green-on-dark); }
-    .hero h1 { font-size: clamp(42px, 6.4vw, 88px); font-weight: 500; line-height: 1.04; letter-spacing: -0.5px; text-wrap: balance; margin-bottom: 24px; }
+    .hero-badge { display:inline-flex; align-items:center; gap:9px; font-size:12px; font-weight:700; letter-spacing:2.2px; text-transform:uppercase; color: var(--green-on-dark); padding:8px 16px; border:1px solid rgba(182,208,237,0.38); border-radius:var(--radius-pill); margin-bottom:30px; }
+    .hero-badge .tick { width:6px; height:6px; border-radius:50%; background: var(--green-on-dark); }
+    .hero h1 { font-size: clamp(42px, 6.4vw, 88px); font-weight: 400; line-height: 1.05; letter-spacing: -0.02em; text-wrap: balance; margin-bottom: 24px; }
     .hero h1 em { font-style: italic; color: var(--green-on-dark); }
-    .hero-sub { font-size: clamp(17px, 2vw, 20px); color: rgba(255,255,255,0.74); max-width: 600px; margin: 0 auto 38px; line-height: 1.7; text-wrap: pretty; }
+    .hero-sub { font-size: clamp(17px, 2vw, 20px); color: rgba(248,244,240,0.76); max-width: 600px; margin: 0 auto 38px; line-height: 1.7; text-wrap: pretty; }
     .hero-actions { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
     .hero-fade { opacity:0; transform: translateY(20px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
     .hero.ready .hero-fade { opacity:1; transform:none; }
@@ -102,14 +127,14 @@
     /* INDEPENDENCE STRIP (elevated disclaimer + audience) */
     .independence { background: var(--paper-2); border-bottom:1px solid var(--line); padding: 16px clamp(20px,5vw,40px); }
     .independence-row { max-width: 1000px; margin:0 auto; display:flex; align-items:center; justify-content:center; gap:13px; text-align:center; }
-    .independence svg { width:20px; height:20px; flex-shrink:0; stroke: var(--green-deep); fill:none; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; }
+    .independence svg { width:20px; height:20px; flex-shrink:0; stroke: var(--green); fill:none; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; }
     .independence p { font-size:13.5px; color: var(--ink-soft); line-height:1.55; }
     .independence strong { color: var(--navy); font-weight:600; }
 
     /* SECTION SHELL */
     section { position:relative; padding: clamp(72px,9vw,116px) clamp(20px,5vw,40px); }
     .container { max-width: 1140px; margin:0 auto; }
-    .lead { font-size: clamp(28px,3.6vw,46px); font-weight:500; line-height:1.14; letter-spacing:-0.3px; text-wrap:balance; }
+    .lead { font-size: clamp(28px,3.6vw,46px); font-weight:400; line-height:1.16; letter-spacing:-0.02em; text-wrap:balance; }
     .reveal { opacity:0; transform: translateY(26px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
     .reveal.in { opacity:1; transform:none; }
     .reveal.r1{transition-delay:.06s}.reveal.r2{transition-delay:.14s}.reveal.r3{transition-delay:.22s}
@@ -121,8 +146,8 @@
     .stat { text-align:center; padding: 4px 8px; }
     .stat + .stat { border-left:1px solid var(--line); }
     @media (max-width:680px){ .stat + .stat{ border-left:none; border-top:1px solid var(--line); padding-top:24px; } }
-    .stat-value { font-family:'EB Garamond',serif; font-size: clamp(40px,5vw,58px); font-weight:500; line-height:1; color: var(--navy); letter-spacing:-0.5px; }
-    .stat-value .u { color: var(--green-deep); }
+    .stat-value { font-family:'ABC Arizona Text',serif; font-size: clamp(40px,5vw,58px); font-weight:400; line-height:1; color: var(--navy); letter-spacing:-0.03em; font-variant-numeric: tabular-nums; }
+    .stat-value .u { color: var(--green); }
     .stat-label { font-size:13.5px; color: var(--ink-soft); margin-top:12px; line-height:1.5; }
 
     /* BLIND SPOT */
@@ -135,8 +160,8 @@
     .conv { padding: 34px 30px 30px 0; border-bottom:1px solid var(--line); }
     .conv + .conv { padding-left: 30px; border-left:1px solid var(--line); }
     @media (max-width:840px){ .conv,.conv + .conv{ padding: 28px 0; border-left:none; } }
-    .conv blockquote { font-family:'EB Garamond',serif; font-style:italic; font-size:22px; line-height:1.35; color: var(--navy); margin-bottom:18px; }
-    .conv .reality { font-size:11px; font-weight:700; letter-spacing:1.6px; text-transform:uppercase; color: var(--green-deep); margin-bottom:10px; }
+    .conv blockquote { font-family:'ABC Arizona Text',serif; font-style:italic; font-weight:400; font-size:23px; line-height:1.36; color: var(--navy); margin-bottom:18px; }
+    .conv .reality { font-size:11px; font-weight:700; letter-spacing:1.6px; text-transform:uppercase; color: var(--green); margin-bottom:10px; }
     .conv p { font-size:15px; color: var(--ink-soft); line-height:1.72; }
 
     /* ===================== COMPARE (Siloed vs Unified diagram) ===================== */
@@ -146,16 +171,16 @@
     .compare-head p { font-size:17px; color: var(--ink-soft); margin-top:16px; line-height:1.7; max-width: 62ch; }
     .compare-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 24px; }
     @media (max-width:820px){ .compare-grid{ grid-template-columns:1fr; } }
-    .panel { border:1px solid var(--line-strong); border-radius: var(--radius); padding: 28px 26px 30px; background: var(--white); }
-    .panel.unified { background: linear-gradient(180deg, rgba(0,120,54,0.05), rgba(0,120,54,0.02)); border-color: rgba(0,120,54,0.30); }
-    .panel-tag { display:inline-block; font-size:11px; font-weight:700; letter-spacing:1.6px; text-transform:uppercase; padding:5px 11px; border-radius:3px; margin-bottom:18px; }
-    .panel.siloed .panel-tag { color: var(--warm); background: rgba(154,106,47,0.10); }
-    .panel.unified .panel-tag { color: var(--green-deep); background: rgba(0,120,54,0.10); }
-    .panel h3 { font-size:22px; font-weight:600; color: var(--navy); margin-bottom:6px; }
+    .panel { border:1px solid var(--line-strong); border-radius: var(--radius); padding: 28px 26px 30px; background: var(--white); box-shadow: 0 1px 2px rgba(51,51,51,0.04); }
+    .panel.unified { background: linear-gradient(180deg, rgba(59,90,105,0.06), rgba(59,90,105,0.02)); border-color: rgba(59,90,105,0.28); }
+    .panel-tag { display:inline-block; font-size:11px; font-weight:700; letter-spacing:1.6px; text-transform:uppercase; padding:5px 11px; border-radius:var(--radius-pill); margin-bottom:18px; }
+    .panel.siloed .panel-tag { color: var(--warm); background: rgba(122,102,84,0.10); }
+    .panel.unified .panel-tag { color: var(--green); background: rgba(59,90,105,0.10); }
+    .panel h3 { font-size:22px; font-weight:400; color: var(--navy); margin-bottom:6px; }
     .panel .diagram { width:100%; height:auto; display:block; margin: 10px 0 18px; }
-    .panel .diagram text { font-family:'Hanken Grotesk',sans-serif; }
+    .panel .diagram text { font-family:'Fakt Pro',sans-serif; }
     .panel .cap { font-size:14.5px; color: var(--ink-soft); line-height:1.6; }
-    .panel.unified .cap strong { color: var(--green-deep); font-weight:600; }
+    .panel.unified .cap strong { color: var(--green); font-weight:600; }
 
     /* CAPABILITIES */
     .cap-sec { background: var(--white); }
@@ -165,52 +190,51 @@
     .cap-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 0 56px; border-top:1px solid var(--line-strong); }
     @media (max-width:780px){ .cap-grid{ grid-template-columns:1fr; } }
     .cap-item { display:grid; grid-template-columns: 44px 1fr; gap:20px; padding: 30px 0; border-bottom:1px solid var(--line); }
-    .cap-ico { width:44px; height:44px; display:flex; align-items:center; justify-content:center; border:1px solid var(--line-strong); border-radius:var(--radius); color: var(--navy); }
+    .cap-ico { width:44px; height:44px; display:flex; align-items:center; justify-content:center; border:1px solid var(--line-strong); border-radius:var(--radius); color: var(--green); }
     .cap-ico svg { width:22px; height:22px; stroke: currentColor; fill:none; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; }
-    .cap-item h3 { font-size:21px; font-weight:600; color: var(--navy); margin-bottom:7px; line-height:1.2; }
+    .cap-item h3 { font-size:21px; font-weight:400; color: var(--navy); margin-bottom:7px; line-height:1.2; }
     .cap-item p { font-size:14.5px; color: var(--ink-soft); line-height:1.66; }
 
-    /* CONVICTION (navy) */
-    .creed { position:relative; overflow:hidden; background: var(--navy); color:#fff; text-align:center; padding: clamp(84px,10vw,128px) clamp(20px,5vw,40px); }
+    /* CONVICTION (granite) */
+    .creed { position:relative; overflow:hidden; background: var(--granite-900); color:#fff; text-align:center; padding: clamp(84px,10vw,128px) clamp(20px,5vw,40px); }
     .creed-bg { position:absolute; inset:0; z-index:0; }
-    .creed-bg svg { position:absolute; inset:0; width:100%; height:100%; opacity:.45; }
     .creed-inner { position:relative; z-index: var(--z-content); max-width: 860px; margin:0 auto; }
     .creed .label { margin-bottom:24px; display:inline-block; }
-    .creed blockquote { font-family:'EB Garamond',serif; font-size: clamp(30px,4.4vw,52px); font-weight:500; line-height:1.18; letter-spacing:-0.3px; text-wrap:balance; }
+    .creed blockquote { font-family:'ABC Arizona Text',serif; font-size: clamp(30px,4.4vw,52px); font-weight:400; line-height:1.2; letter-spacing:-0.02em; text-wrap:balance; }
     .creed blockquote em { font-style:italic; color: var(--green-on-dark); }
-    .creed p { font-size:17px; color: rgba(255,255,255,0.74); margin-top:26px; line-height:1.72; max-width: 58ch; margin-left:auto; margin-right:auto; }
+    .creed p { font-size:17px; color: rgba(248,244,240,0.76); margin-top:26px; line-height:1.72; max-width: 58ch; margin-left:auto; margin-right:auto; }
 
     /* ===================== ASSESSMENT (micro-tool) ===================== */
     .assess { background: var(--white); }
     .assess-head { max-width: 720px; margin: 0 auto clamp(36px,4vw,48px); text-align:center; }
     .assess-head .lead { color: var(--navy); margin-top:14px; }
     .assess-head p { font-size:16.5px; color: var(--ink-soft); margin-top:14px; line-height:1.65; max-width:60ch; margin-left:auto; margin-right:auto; }
-    .assess-card { max-width: 980px; margin: 0 auto; border:1px solid var(--line-strong); border-radius: 10px; overflow:hidden; display:grid; grid-template-columns: 1.15fr 0.85fr; box-shadow: 0 18px 50px rgba(0,40,86,0.08); }
+    .assess-card { max-width: 980px; margin: 0 auto; border:1px solid var(--line-strong); border-radius: var(--radius); overflow:hidden; display:grid; grid-template-columns: 1.15fr 0.85fr; box-shadow: 0 1px 2px rgba(51,51,51,0.04), 0 18px 48px rgba(51,51,51,0.08); }
     @media (max-width:820px){ .assess-card{ grid-template-columns:1fr; } }
-    .assess-inputs { padding: clamp(28px,4vw,40px); }
+    .assess-inputs { padding: clamp(28px,4vw,40px); background: var(--paper); }
     .field { margin-bottom: 30px; }
     .field:last-child { margin-bottom: 0; }
     .field-top { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:14px; gap:12px; }
     .field-top label { font-size:15px; font-weight:600; color: var(--navy); }
-    .field-val { font-family:'EB Garamond',serif; font-size:24px; font-weight:600; color: var(--green-deep); line-height:1; white-space:nowrap; }
+    .field-val { font-family:'ABC Arizona Text',serif; font-size:25px; font-weight:400; color: var(--green); line-height:1; white-space:nowrap; font-variant-numeric: tabular-nums; }
     input[type=range] { -webkit-appearance:none; appearance:none; width:100%; height:5px; border-radius:3px; background: linear-gradient(90deg, var(--green) var(--fill,30%), var(--line-strong) var(--fill,30%)); outline:none; cursor:pointer; }
-    input[type=range]::-webkit-slider-thumb { -webkit-appearance:none; appearance:none; width:24px; height:24px; border-radius:50%; background: var(--green); border:3px solid #fff; box-shadow:0 1px 5px rgba(0,40,86,0.30); cursor:pointer; transition: transform .12s var(--ease); }
+    input[type=range]::-webkit-slider-thumb { -webkit-appearance:none; appearance:none; width:24px; height:24px; border-radius:50%; background: var(--green); border:3px solid #fff; box-shadow:0 1px 5px rgba(51,51,51,0.28); cursor:pointer; transition: transform .12s var(--ease); }
     input[type=range]::-webkit-slider-thumb:hover { transform: scale(1.12); }
-    input[type=range]::-moz-range-thumb { width:24px; height:24px; border-radius:50%; background: var(--green); border:3px solid #fff; box-shadow:0 1px 5px rgba(0,40,86,0.30); cursor:pointer; }
+    input[type=range]::-moz-range-thumb { width:24px; height:24px; border-radius:50%; background: var(--green); border:3px solid #fff; box-shadow:0 1px 5px rgba(51,51,51,0.28); cursor:pointer; }
     input[type=range]:focus-visible { outline:2px solid var(--green); outline-offset:6px; }
     .field-scale { display:flex; justify-content:space-between; font-size:11.5px; color: var(--ink-soft); margin-top:8px; }
-    .assess-result { background: var(--navy); color:#fff; padding: clamp(28px,4vw,40px); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; }
+    .assess-result { background: var(--granite-800); color:#fff; padding: clamp(28px,4vw,40px); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; }
     .gauge-wrap { position:relative; width:170px; height:170px; margin-bottom:6px; }
     .gauge { width:170px; height:170px; transform: rotate(-90deg); }
     .g-track { fill:none; stroke: rgba(255,255,255,0.16); stroke-width:11; }
-    .g-fill { fill:none; stroke: var(--green-on-dark); stroke-width:11; stroke-linecap:round; transition: stroke-dashoffset .55s var(--ease); }
+    .g-fill { fill:none; stroke: var(--aqua-500); stroke-width:11; stroke-linecap:round; transition: stroke-dashoffset .55s var(--ease); }
     .gauge-num { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; }
-    .gauge-num b { font-family:'EB Garamond',serif; font-size:46px; font-weight:600; line-height:1; }
+    .gauge-num b { font-family:'ABC Arizona Text',serif; font-size:48px; font-weight:400; line-height:1; font-variant-numeric: tabular-nums; }
     .gauge-num span { font-size:11px; letter-spacing:1.6px; text-transform:uppercase; color: rgba(255,255,255,0.6); margin-top:6px; }
-    .assess-band { font-size:13px; font-weight:700; letter-spacing:1.4px; text-transform:uppercase; color: var(--green-on-dark); margin: 10px 0 8px; }
-    .assess-interp { font-size:14.5px; color: rgba(255,255,255,0.82); line-height:1.6; max-width:34ch; margin-bottom:22px; min-height: 3em; }
+    .assess-band { font-size:13px; font-weight:700; letter-spacing:1.4px; text-transform:uppercase; color: var(--aqua-300); margin: 10px 0 8px; }
+    .assess-interp { font-size:14.5px; color: rgba(248,244,240,0.84); line-height:1.6; max-width:34ch; margin-bottom:22px; min-height: 3em; }
     .assess-result .btn-primary { width:100%; justify-content:center; }
-    .assess-disclaimer { font-size:11.5px; color: rgba(255,255,255,0.5); margin-top:14px; line-height:1.5; }
+    .assess-disclaimer { font-size:11.5px; color: rgba(248,244,240,0.5); margin-top:14px; line-height:1.5; }
 
     /* FAQ */
     .faq { background: var(--paper); }
@@ -219,9 +243,9 @@
     .faq-head p { font-size:17px; color: var(--ink-soft); margin-top:14px; }
     .faq-list { max-width: 820px; margin:0 auto; border-top:1px solid var(--line); }
     .faq-item { border-bottom:1px solid var(--line); }
-    .faq-q { width:100%; background:none; border:none; text-align:left; padding:24px 8px; font-family:'Hanken Grotesk',sans-serif; font-size:17.5px; font-weight:600; color: var(--navy); display:flex; justify-content:space-between; align-items:center; gap:18px; cursor:pointer; }
+    .faq-q { width:100%; background:none; border:none; text-align:left; padding:24px 8px; font-family:'Fakt Pro',sans-serif; font-size:17.5px; font-weight:600; color: var(--navy); display:flex; justify-content:space-between; align-items:center; gap:18px; cursor:pointer; }
     .faq-ico { flex-shrink:0; width:18px; height:18px; position:relative; }
-    .faq-ico::before, .faq-ico::after { content:''; position:absolute; background: var(--green-deep); transition: transform .26s var(--ease), opacity .26s; }
+    .faq-ico::before, .faq-ico::after { content:''; position:absolute; background: var(--green); transition: transform .26s var(--ease), opacity .26s; }
     .faq-ico::before { top:8px; left:0; width:18px; height:1.6px; }
     .faq-ico::after  { left:8px; top:0; width:1.6px; height:18px; }
     .faq-item.open .faq-ico::after { transform: rotate(90deg); opacity:0; }
@@ -240,7 +264,7 @@
     .cred { padding: 34px 24px; text-align:center; }
     .cred + .cred { border-left:1px solid var(--line); }
     @media (max-width:760px){ .creds .cred:nth-child(odd){ border-left:none; } .creds .cred:nth-child(n+3){ border-top:1px solid var(--line); } }
-    .cred .mono { font-family:'EB Garamond',serif; font-size:34px; font-weight:600; color: var(--green-deep); line-height:1; margin-bottom:14px; }
+    .cred .mono { font-family:'ABC Arizona Text',serif; font-size:36px; font-weight:400; color: var(--green-deep); line-height:1; margin-bottom:14px; }
     .cred h4 { font-size:13.5px; font-weight:700; letter-spacing:.4px; color: var(--navy); margin-bottom:6px; }
     .cred p { font-size:13px; color: var(--ink-soft); line-height:1.55; }
     .team-foot { text-align:center; margin-top:40px; font-size:15px; color: var(--ink-soft); }
@@ -253,32 +277,31 @@
     .windows-head p { font-size:16.5px; color: var(--ink-soft); margin-top:14px; line-height:1.65; }
     .windows-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 22px; max-width: 980px; margin:0 auto; }
     @media (max-width:760px){ .windows-grid{ grid-template-columns:1fr; } }
-    .window { background: var(--white); border:1px solid var(--line-strong); border-radius: var(--radius); padding: 30px 28px; display:flex; flex-direction:column; }
+    .window { background: var(--paper); border:1px solid var(--line-strong); border-radius: var(--radius); padding: 30px 28px; display:flex; flex-direction:column; }
     .window-top { display:flex; align-items:center; gap:12px; margin-bottom:16px; }
-    .window-ico { width:40px; height:40px; flex-shrink:0; border-radius:var(--radius); display:flex; align-items:center; justify-content:center; background: rgba(0,120,54,0.08); border:1px solid rgba(0,120,54,0.22); color: var(--green-deep); }
+    .window-ico { width:40px; height:40px; flex-shrink:0; border-radius:var(--radius); display:flex; align-items:center; justify-content:center; background: rgba(59,90,105,0.08); border:1px solid rgba(59,90,105,0.22); color: var(--green); }
     .window-ico svg { width:20px; height:20px; stroke:currentColor; fill:none; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; }
-    .window-when { font-size:11.5px; font-weight:700; letter-spacing:1.4px; text-transform:uppercase; color: var(--green-deep); }
-    .window h3 { font-size:19px; font-weight:600; color: var(--navy); margin-top:3px; line-height:1.2; }
+    .window-when { font-size:11.5px; font-weight:700; letter-spacing:1.4px; text-transform:uppercase; color: var(--green); }
+    .window h3 { font-size:19px; font-weight:400; color: var(--navy); margin-top:3px; line-height:1.2; }
     .window p { font-size:14.5px; color: var(--ink-soft); line-height:1.7; }
 
-    /* CTA (navy) */
+    /* CTA (granite) */
     .cta { position:relative; overflow:hidden; text-align:center; background: var(--navy-900); color:#fff; padding: clamp(88px,11vw,140px) clamp(20px,5vw,40px); }
-    .cta-bg { position:absolute; inset:0; z-index:0; background: radial-gradient(900px 600px at 50% -10%, rgba(13,58,107,0.7), transparent 60%); }
-    .cta-bg svg { position:absolute; inset:0; width:100%; height:100%; opacity:.6; }
+    .cta-bg { position:absolute; inset:0; z-index:0; background: radial-gradient(900px 600px at 50% -10%, rgba(86,126,161,0.28), transparent 60%); }
     .cta-inner { position:relative; z-index: var(--z-content); max-width: 660px; margin:0 auto; }
-    .cta h2 { font-family:'EB Garamond',serif; font-size: clamp(32px,4.6vw,56px); font-weight:500; line-height:1.14; letter-spacing:-0.3px; text-wrap:balance; margin-bottom:20px; }
-    .cta p { font-size:17.5px; color: rgba(255,255,255,0.78); margin-bottom:36px; line-height:1.7; }
+    .cta h2 { font-family:'ABC Arizona Text',serif; font-size: clamp(32px,4.6vw,56px); font-weight:400; line-height:1.16; letter-spacing:-0.02em; text-wrap:balance; margin-bottom:20px; }
+    .cta p { font-size:17.5px; color: rgba(248,244,240,0.80); margin-bottom:36px; line-height:1.7; }
     .cta .btn-primary { padding: 16px 34px; font-size:16px; }
-    .cta-note { margin-top:22px; font-size:13.5px; color: rgba(255,255,255,0.58); }
+    .cta-note { margin-top:22px; font-size:13.5px; color: rgba(248,244,240,0.58); }
 
     /* FOOTER */
-    footer { background: var(--navy-900); color:#fff; padding: 54px clamp(20px,5vw,40px) 40px; border-top:1px solid rgba(255,255,255,0.08); }
+    footer { background: var(--charcoal-900); color:#fff; padding: 54px clamp(20px,5vw,40px) 40px; border-top:1px solid rgba(255,255,255,0.08); }
     .foot-inner { max-width:1140px; margin:0 auto; text-align:center; }
     .foot-logo { display:inline-flex; align-items:center; gap:11px; margin-bottom:22px; }
-    .foot-logo .logo-text { color:#fff; font-size:19px; }
-    footer p { font-size:12.5px; color: rgba(255,255,255,0.50); line-height:1.8; max-width:820px; margin:0 auto; }
-    footer a { color: rgba(255,255,255,0.66); text-decoration:none; transition: color .2s; }
-    footer a:hover { color: var(--green-on-dark); }
+    .foot-logo .logo-text { color:#fff; font-size:20px; }
+    footer p { font-size:12.5px; color: rgba(248,244,240,0.52); line-height:1.8; max-width:820px; margin:0 auto; }
+    footer a { color: rgba(248,244,240,0.68); text-decoration:none; transition: color .2s; }
+    footer a:hover { color: var(--sky-300); }
     .foot-links { margin:18px 0; font-size:13px; }
     .foot-links a { margin: 0 10px; }
 
@@ -294,8 +317,18 @@
 <!-- NAV -->
 <nav id="nav" class="nav--dark">
   <a href="#top" class="nav-logo" aria-label="Farther Focus Team home">
-    <span class="logo-mark">F</span>
-    <span class="logo-text">Farther<small>Focus Team</small></span>
+    <svg class="brand-lockup" viewBox="0 0 200 34" fill="none" role="img" aria-label="Farther Focus Team" xmlns="http://www.w3.org/2000/svg">
+      <path d="M149.444 32.4988V8.94108" stroke="currentColor" stroke-width="1.27731" stroke-linecap="round"/>
+      <path d="M154.554 32.4988V8.94108" stroke="currentColor" stroke-width="1.27731" stroke-linecap="round"/>
+      <path d="M164.325 19V11.9697H169.148V12.9507H165.48V15.209H168.403V16.1797H165.48V19H164.325ZM169.879 15.4849C169.879 13.4003 171.269 11.8471 173.384 11.8471C175.458 11.8471 176.899 13.4003 176.899 15.4849C176.899 17.5694 175.458 19.1226 173.384 19.1226C171.269 19.1226 169.879 17.5694 169.879 15.4849ZM171.074 15.4849C171.074 16.9972 171.994 18.1008 173.384 18.1008C174.784 18.1008 175.703 16.987 175.703 15.4849C175.703 13.9827 174.784 12.8689 173.384 12.8689C171.994 12.8689 171.074 13.9725 171.074 15.4849ZM178.116 15.4849C178.116 13.4003 179.496 11.8471 181.57 11.8471C183.246 11.8471 184.36 12.7974 184.636 14.2586H183.45C183.195 13.3288 182.572 12.8689 181.57 12.8689C180.201 12.8689 179.312 13.9419 179.312 15.4849C179.312 16.9972 180.211 18.1008 181.539 18.1008C182.633 18.1008 183.205 17.6205 183.45 16.7111H184.636C184.36 18.1723 183.215 19.1226 181.529 19.1226C179.465 19.1226 178.116 17.6001 178.116 15.4849ZM186.041 16.2001V11.9697H187.195V16.1899C187.195 17.4161 187.768 18.1008 188.963 18.1008C190.159 18.1008 190.731 17.4161 190.731 16.1899V11.9697H191.886V16.2001C191.886 18.3256 190.69 19.1226 188.963 19.1226C187.246 19.1226 186.041 18.3256 186.041 16.2001ZM193.266 16.9154H194.411C194.411 17.7329 195.024 18.2234 196.045 18.2234C197.118 18.2234 197.721 17.784 197.721 17.0381C197.721 16.3534 197.057 16.1491 196.219 15.9856L195.759 15.9038C194.615 15.7097 193.389 15.3929 193.389 13.9317C193.389 12.7361 194.421 11.8471 196.056 11.8471C197.64 11.8471 198.692 12.6135 198.692 13.9419H197.558C197.558 13.1346 196.914 12.7463 196.056 12.7463C195.197 12.7463 194.533 13.1142 194.533 13.8192C194.533 14.5345 195.259 14.7185 196.168 14.882L196.628 14.9637C197.742 15.1579 198.907 15.5155 198.907 16.9461C198.907 18.2438 197.875 19.1226 196.045 19.1226C194.247 19.1226 193.266 18.2949 193.266 16.9154ZM163.549 24.9405V23.9697H169.537V24.9405H167.115V31H165.96V24.9405H163.549ZM170.677 31V23.9697H175.602V24.9507H171.831V26.9433H174.856V27.8936H171.831V30.019H175.694V31H170.677ZM176.681 31L179.297 23.9697H180.656L183.272 31H182.056L181.453 29.2935H178.459L177.846 31H176.681ZM178.796 28.333H181.116L179.982 25.1142H179.941L178.796 28.333ZM184.437 31V23.9697H185.929L188.29 29.4366H188.32L190.65 23.9697H192.122V31H190.967L191.059 25.6455H191.018L188.729 31H187.84L185.551 25.7375H185.51L185.592 31H184.437Z" fill="currentColor"/>
+      <path d="M90.4014 8.38725C95.3782 8.38725 98.1046 11.2383 98.1046 16.5949V30.8504L93.5605 30.8504V17.0701C93.5605 14.2622 91.916 12.4479 89.1896 12.4479C85.7708 12.4479 83.6503 14.9534 83.6503 19.0572V30.8504H79.063V0.136372L83.6503 0.136372V12.2751C85.1649 9.51041 87.1124 8.38725 90.4014 8.38725Z" fill="currentColor"/>
+      <path d="M4.80368 17.1929H19.1011V12.7003L4.80368 12.7003L4.80368 4.44943L19.1011 4.44943V0L1.23341 0C0.552218 0 0 0.547601 0 1.2231L0 10.7738C0 12.9409 1.77152 14.6976 3.95681 14.6976V15.1685C1.77152 15.1685 0 16.9253 0 19.0923L0 30.8504H4.80368L4.80368 17.1929Z" fill="currentColor"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M40.6987 15.515C40.6987 10.72 37.6694 8.38725 32.433 8.38725C26.7205 8.38725 23.042 11.2383 22.5227 15.7742H26.8503C27.3264 13.3119 29.144 12.0591 32.2166 12.0591C34.943 12.0591 36.2846 12.9663 36.2846 14.8238C36.2846 16.7245 35.0295 17.2429 33.5149 17.4589L28.7977 18.1933C26.8936 18.4957 25.2491 19.1436 23.9075 20.0508C22.566 20.958 21.9168 22.5131 21.9168 24.7162C21.9168 28.6905 24.5999 31.3256 29.1007 31.3256C32.0435 31.3256 34.6401 30.1592 36.3278 27.5241V30.8504H40.6987V15.515ZM36.1547 21.5195C36.1547 25.105 33.6447 27.4809 30.1393 27.4809C27.7591 27.4809 26.4175 26.401 26.4175 24.5002C26.4175 23.2475 26.8503 22.4267 27.6726 21.9515C28.5381 21.4763 29.4902 21.174 30.5721 21.0012L33.0821 20.6124C34.2073 20.4396 35.2459 20.2236 36.1547 19.9212V21.5195Z" fill="currentColor"/>
+      <path d="M56.4497 8.60324H58.6483V13.0095H56.8392C52.5116 13.0095 50.3478 15.299 50.3478 19.878V30.8504H45.7605V8.81923L50.3045 8.81923V12.3183C51.5595 9.55361 53.68 8.60324 56.4497 8.60324Z" fill="currentColor"/>
+      <path d="M74.7049 26.9193H70.1388C68.1913 26.9193 67.2825 26.0554 67.2825 24.1114V12.7935H74.1855V8.81923H67.2825V2.29629H62.6953V23.9387C62.6953 29.0793 64.4696 30.8504 69.2733 30.8504H74.7049V26.9193Z" fill="currentColor"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M122.979 19.23C122.979 12.6207 119.084 8.38725 113.155 8.38725C106.88 8.38725 102.596 13.0527 102.596 20.0076C102.596 26.8761 106.707 31.3256 112.982 31.3256C117.959 31.3256 121.681 28.5609 122.763 24.3706H118.738C117.916 26.401 116.055 27.5241 113.328 27.5241C109.347 27.5241 106.88 25.1482 106.88 21.1308H122.979V19.23ZM113.069 12.1887C116.531 12.1887 118.608 14.3486 118.608 17.8045H106.924C107.226 14.3486 109.607 12.1887 113.069 12.1887Z" fill="currentColor"/>
+      <path d="M137.939 8.60324H140.609V13.0095H138.328C134.001 13.0095 131.837 15.299 131.837 19.878V30.8504H127.249V8.81923H131.793V12.3183C133.048 9.55361 135.169 8.60324 137.939 8.60324Z" fill="currentColor"/>
+    </svg>
   </a>
   <a href="#contact" class="btn nav-cta">Request a consultation</a>
 </nav>
@@ -303,21 +336,10 @@
 <!-- HERO -->
 <header class="hero" id="top" data-theme="dark">
   <div class="hero-bg" aria-hidden="true">
-    <svg id="engrave" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
-      <defs>
-        <linearGradient id="eg" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stop-color="#4cc585" stop-opacity="0.5"/>
-          <stop offset="1" stop-color="#5f86c4" stop-opacity="0.35"/>
-        </linearGradient>
-      </defs>
-      <g id="engrave-group" fill="none" stroke="url(#eg)" stroke-width="0.7"></g>
-    </svg>
-    <svg id="dotfield" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-      <g id="dot-group"></g>
-    </svg>
+    <svg id="hero-waves" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice"></svg>
   </div>
   <div class="hero-inner">
-    <div class="hero-badge hero-fade d1"><span class="tick"></span> For leaders in elite asset management</div>
+    <div class="hero-badge hero-fade d1"><span class="tick"></span> For senior professionals at Barings</div>
     <h1 class="hero-fade d2">You manage institutional capital.<br>Who manages <em>yours?</em></h1>
     <p class="hero-sub hero-fade d3">The discipline you bring to the world's largest institutions, now working on your own balance sheet: tax, estate, and equity strategy.</p>
     <div class="hero-actions hero-fade d4">
@@ -421,7 +443,7 @@
         <span class="panel-tag">The siloed default</span>
         <h3>Four relationships, no plan</h3>
         <svg class="diagram" viewBox="0 0 340 250" role="img" aria-label="You at the center, weakly and separately connected to a CPA, estate attorney, benefits desk, and investment advisor, who never connect to each other.">
-          <g stroke="var(--warm)" stroke-width="1.3" stroke-dasharray="4 5" opacity="0.55" fill="none">
+          <g stroke="var(--warm)" stroke-width="1.3" stroke-dasharray="4 5" opacity="0.6" fill="none">
             <line x1="170" y1="125" x2="64" y2="52"/>
             <line x1="170" y1="125" x2="276" y2="52"/>
             <line x1="170" y1="125" x2="64" y2="198"/>
@@ -452,7 +474,7 @@
         <span class="panel-tag">The Farther approach</span>
         <h3>One coordinated plan</h3>
         <svg class="diagram" viewBox="0 0 340 250" role="img" aria-label="The Farther Focus Team at the hub, connecting you and every specialist into one coordinated plan.">
-          <g stroke="var(--green)" stroke-width="1.8" opacity="0.85">
+          <g stroke="var(--green)" stroke-width="1.8" opacity="0.9">
             <line x1="170" y1="125" x2="170" y2="40"/>
             <line x1="170" y1="125" x2="300" y2="95"/>
             <line x1="170" y1="125" x2="252" y2="212"/>
@@ -522,10 +544,10 @@
   </div>
 </section>
 
-<!-- CONVICTION (navy) -->
+<!-- CONVICTION (granite) -->
 <section class="creed" data-theme="dark">
   <div class="creed-bg" aria-hidden="true">
-    <svg viewBox="0 0 1440 600" preserveAspectRatio="xMidYMid slice"><g id="creed-dots"></g></svg>
+    <svg id="creed-waves" viewBox="0 0 1440 600" preserveAspectRatio="xMidYMid slice"></svg>
   </div>
   <div class="creed-inner">
     <span class="label on-dark">The Farther Focus Team</span>
@@ -631,7 +653,7 @@
 <!-- CTA -->
 <section class="cta" id="contact" data-theme="dark">
   <div class="cta-bg" aria-hidden="true">
-    <svg viewBox="0 0 1440 700" preserveAspectRatio="xMidYMid slice"><g id="cta-dots"></g></svg>
+    <svg id="cta-waves" viewBox="0 0 1440 700" preserveAspectRatio="xMidYMid slice"></svg>
   </div>
   <div class="cta-inner">
     <h2>Your wealth deserves the discipline you demand.</h2>
@@ -647,7 +669,7 @@
 <footer data-theme="dark">
   <div class="foot-inner">
     <div class="foot-logo">
-      <span class="logo-mark" style="width:30px;height:30px;font-size:17px;">F</span>
+      <span class="logo-mark" style="width:30px;height:30px;font-size:18px;">F</span>
       <span class="logo-text">Farther</span>
     </div>
     <p><sup>*</sup>$815M reflects client assets advised by the Farther Focus Team. Farther Finance, Inc. is an SEC-registered investment adviser. Registration does not imply a certain level of skill or training. This material is for informational purposes only and does not constitute investment, tax, or legal advice. Farther is not affiliated with, endorsed by, or sponsored by Barings, Point72, Blackstone, MassMutual, or any other firm referenced. Consult your own tax and legal professionals regarding your specific situation.</p>
@@ -814,60 +836,38 @@
   else { addEventListener('load', readyHero); setTimeout(readyHero, 500); }
 
   /* ============================================================
-     SIGNATURE MOTIF - dot-matrix halftone (generated SVG)
-     Dot radius scales along a diagonal gradient. Drawn once, static.
+     SIGNATURE MOTIF - "Waves of Wealth" (generated SVG)
+     Stacked translucent wave bands resolving from Steel/Granite
+     blue into warm Clay. Drawn once, static. Zero external requests.
      ============================================================ */
   const SVGNS = 'http://www.w3.org/2000/svg';
-  function buildDotField(groupId, opts){
-    const g = document.getElementById(groupId);
-    if (!g) return;
-    const { cols, rows, gap, vw, vh, originX, originY, maxR, color, opacity } = opts;
-    const ox = vw * originX, oy = vh * originY;
-    const maxDist = Math.hypot(vw, vh);
-    const startX = (vw - (cols - 1) * gap) * 0.5 + (opts.shiftX || 0);
-    for (let i = 0; i < cols; i++){
-      for (let j = 0; j < rows; j++){
-        const x = startX + i * gap;
-        const yy = (opts.startY || 0) + j * gap;
-        const dist = Math.hypot(x - ox, yy - oy) / maxDist;
-        const r = Math.max(0.4, maxR * (1 - dist) * (1 - dist));
-        if (r < 0.5) continue;
-        const c = document.createElementNS(SVGNS, 'circle');
-        c.setAttribute('cx', x.toFixed(1));
-        c.setAttribute('cy', yy.toFixed(1));
-        c.setAttribute('r', r.toFixed(2));
-        c.setAttribute('fill', color);
-        c.setAttribute('opacity', (opacity * (0.35 + 0.65 * (1 - dist))).toFixed(3));
-        g.appendChild(c);
+  function buildWaves(svgId, opts){
+    const svg = document.getElementById(svgId);
+    if (!svg) return;
+    const { vw, vh, bands, baseY, spacing, amp, wavelength } = opts;
+    // Steel/Granite -> Clay ramp (top, cool/faint -> bottom, warm/present)
+    const ramp = ['#94B5C3','#7CA4B4','#5B8A9C','#567EA1','#8E7B64','#9F8E75','#7A6654'];
+    const step = 14;
+    for (let i = 0; i < bands; i++){
+      const y0 = baseY + i * spacing;
+      const phase = i * 0.72;
+      const a = amp * (1 - i / (bands * 1.7));
+      let dd = 'M0 ' + y0.toFixed(1);
+      for (let x = 0; x <= vw; x += step){
+        const yy = y0 + a * Math.sin((x / wavelength) * Math.PI * 2 + phase);
+        dd += ' L' + x + ' ' + yy.toFixed(1);
       }
+      dd += ' L' + vw + ' ' + vh + ' L0 ' + vh + ' Z';
+      const p = document.createElementNS(SVGNS, 'path');
+      p.setAttribute('d', dd);
+      p.setAttribute('fill', ramp[i % ramp.length]);
+      p.setAttribute('opacity', (0.05 + i * 0.021).toFixed(3));
+      svg.appendChild(p);
     }
   }
-  buildDotField('dot-group', { cols: 46, rows: 34, gap: 30, vw: 1440, vh: 900, originX: 0.82, originY: 0.10, maxR: 4.4, color: '#7fb4ff', opacity: 0.55, startY: 20 });
-  buildDotField('dot-group', { cols: 30, rows: 20, gap: 30, vw: 1440, vh: 900, originX: 0.84, originY: 0.12, maxR: 3.0, color: '#4cc585', opacity: 0.5, startY: 20, shiftX: 80 });
-  buildDotField('creed-dots', { cols: 48, rows: 20, gap: 32, vw: 1440, vh: 600, originX: 0.5, originY: 0.5, maxR: 3.0, color: '#4cc585', opacity: 0.32, startY: 10 });
-  buildDotField('cta-dots', { cols: 48, rows: 22, gap: 32, vw: 1440, vh: 700, originX: 0.5, originY: 0.0, maxR: 3.2, color: '#7fb4ff', opacity: 0.3, startY: 10 });
-
-  /* Heritage engraving: layered guilloche rosette, faint, behind hero dots */
-  (function(){
-    const g = document.getElementById('engrave-group');
-    if (!g) return;
-    const cx = 1080, cy = 250;
-    function rosette(A, B, petals, phase, step){
-      let d = '';
-      for (let t = 0; t <= Math.PI*2 + step; t += step){
-        const r = A + B*Math.cos(petals*t + phase);
-        const x = cx + r*Math.cos(t), yy = cy + r*Math.sin(t);
-        d += (d ? ' L' : 'M') + x.toFixed(1) + ',' + yy.toFixed(1);
-      }
-      return d + 'Z';
-    }
-    for (let i = 0; i < 6; i++){
-      const p = document.createElementNS(SVGNS, 'path');
-      p.setAttribute('d', rosette(150 + i*16, 26, 22 + i*2, i*0.18, 0.02));
-      p.setAttribute('opacity', (0.5 - i*0.06).toFixed(2));
-      g.appendChild(p);
-    }
-  })();
+  buildWaves('hero-waves',  { vw:1440, vh:900, bands:7, baseY:360, spacing:78, amp:80, wavelength:1120 });
+  buildWaves('creed-waves', { vw:1440, vh:600, bands:6, baseY:210, spacing:64, amp:54, wavelength:1000 });
+  buildWaves('cta-waves',   { vw:1440, vh:700, bands:6, baseY:250, spacing:70, amp:60, wavelength:1050 });
 </script>
 </body>
 </html>
